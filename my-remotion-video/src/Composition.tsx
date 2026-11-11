@@ -1,6 +1,7 @@
 import { Composition } from "remotion";
 import { DURATION, Edit, FPS, HEIGHT, WIDTH } from "./Edit";
 import { EN_DURATION, EN_FPS, EnglishEdit } from "./EnglishEdit";
+import { AN_DURATION, AN_FPS, AngryEdit } from "./AngryEdit";
 
 export const MyComposition = () => {
   return (
@@ -18,6 +19,14 @@ export const MyComposition = () => {
         component={EnglishEdit}
         durationInFrames={EN_DURATION}
         fps={EN_FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
+      <Composition
+        id="AngryEdit"
+        component={AngryEdit}
+        durationInFrames={AN_DURATION}
+        fps={AN_FPS}
         width={WIDTH}
         height={HEIGHT}
       />

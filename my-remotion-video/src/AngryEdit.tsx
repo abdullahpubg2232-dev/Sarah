@@ -1,0 +1,459 @@
+import React from "react";
+import {
+  AbsoluteFill,
+  Audio,
+  Easing,
+  OffthreadVideo,
+  Sequence,
+  interpolate,
+  interpolateColors,
+  spring,
+  staticFile,
+  useCurrentFrame,
+  useVideoConfig,
+} from "remotion";
+import { loadFonts, LATIN } from "./fonts";
+
+loadFonts();
+
+export const AN_FPS = 60;
+export const AN_DURATION = 693; // 11.55 s
+
+const INK = "#0B0B0B";
+const YELLOW = "#FFD23F";
+const ORANGE = "#FF8A1F";
+const RED = "#FF2D2D";
+
+// Timings (seconds) from the transcription. i = "I'm", v = "very", a = "angry".
+type Rep = { i: number; v: number; a: number; end: number; strong: boolean };
+const REPS: Rep[] = [
+  { i: 2.74, v: 2.95, a: 3.14, end: 3.95, strong: true },
+  { i: 4.02, v: 4.18, a: 4.34, end: 4.64, strong: false },
+  { i: 4.68, v: 4.98, a: 5.14, end: 5.52, strong: true },
+  { i: 5.56, v: 5.7, a: 5.86, end: 6.4, strong: false },
+];
+type Fury = { i: number; f: number; end: number };
+const FURY: Fury[] = [
+  { i: 8.38, f: 8.74, end: 9.6 },
+  { i: 9.78, f: 10.2, end: 11.1 },
+];
+
+// Anger meter level after each line.
+const LEVELS: [number, number][] = [
+  [2.6, 0.12],
+  [3.14, 0.3],
+  [4.34, 0.45],
+  [5.14, 0.6],
+  [5.86, 0.72],
+  [8.74, 0.9],
+  [10.2, 1],
+];
+
+const sec = (s: number) => Math.round(s * AN_FPS);
+const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+
+const useT = () => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  return { frame, fps, t: frame / fps };
+};
+const sp = (frame: number, fps: number, at: number, stiffness = 200, damping = 18) =>
+  spring({ frame: frame - sec(at), fps, config: { stiffness, damping } });
+
+// Decaying screen shake after a hit.
+const shakeAt = (t: number, at: number, amp: number) => {
+  const d = t - at;
+  if (d < 0 || d > 0.55) return { x: 0, y: 0, r: 0 };
+  const k = Math.exp(-d * 7) * amp;
+  return {
+    x: Math.sin(d * 95) * k,
+    y: Math.cos(d * 77) * k * 0.7,
+    r: Math.sin(d * 61) * k * 0.012,
+  };
+};
+const totalShake = (t: number, scale = 1) => {
+  let x = 0;
+  let y = 0;
+  let r = 0;
+  FURY.forEach((f, idx) => {
+    const s = shakeAt(t, f.f, (idx === 0 ? 34 : 50) * scale);
+    x += s.x;
+    y += s.y;
+    r += s.r;
+  });
+  return { x, y, r };
+};
+
+const level = (frame: number, fps: number) => {
+  let v = 0;
+  for (let k = 0; k < LEVELS.length; k++) {
+    const [at, target] = LEVELS[k];
+    const prev = k === 0 ? 0 : LEVELS[k - 1][1];
+    v += (target - prev) * sp(frame, fps, at, 160, 16);
+  }
+  return v;
+};
+
+/* ---------------- Footage ---------------- */
+
+const Footage: React.FC = () => {
+  const { frame, fps, t } = useT();
+  let scale = interpolate(t, [0, 11.55], [1.03, 1.1], { easing: Easing.inOut(Easing.quad) });
+  for (const r of REPS.filter((x) => x.strong)) {
+    const p = sp(frame, fps, r.a, 240, 22);
+    const out = interpolate(t, [r.a + 0.35, r.a + 0.9], [0, 1], clamp);
+    scale += 0.05 * p * (1 - out);
+  }
+  FURY.forEach((f, idx) => {
+    const p = sp(frame, fps, f.f, 260, 20);
+    const out = interpolate(t, [f.f + 0.6, f.f + 1.2], [0, 1], clamp);
+    scale += (idx === 0 ? 0.08 : 0.12) * p * (1 - out);
+  });
+  const sh = totalShake(t);
+  const dx = Math.sin(t * 0.9) * 10 + sh.x;
+  const dy = Math.cos(t * 0.7) * 8 + sh.y;
+  return (
+    <AbsoluteFill style={{ overflow: "hidden", backgroundColor: "black" }}>
+      <AbsoluteFill
+        style={{
+          transform: `translate(${dx}px, ${dy}px) rotate(${sh.r}rad) scale(${scale})`,
+          transformOrigin: "50% 30%",
+        }}
+      >
+        <OffthreadVideo
+          src={staticFile("footage3.mp4")}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
+const Grade: React.FC = () => {
+  const { frame, fps, t } = useT();
+  const lv = level(frame, fps);
+  const flash = Math.max(
+    ...FURY.map((f, idx) =>
+      interpolate(t, [f.f, f.f + 0.06, f.f + 0.5], [0, idx === 0 ? 0.35 : 0.5, 0], clamp),
+    ),
+  );
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none" }}>
+      <AbsoluteFill
+        style={{
+          background:
+            "radial-gradient(ellipse 75% 60% at 50% 35%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.42) 100%)",
+        }}
+      />
+      {/* Red edge glow that grows with the anger level */}
+      <AbsoluteFill
+        style={{
+          opacity: lv * 0.75,
+          background:
+            "radial-gradient(ellipse 70% 58% at 50% 40%, rgba(255,30,30,0) 50%, rgba(255,30,30,0.55) 100%)",
+          mixBlendMode: "screen",
+        }}
+      />
+      <AbsoluteFill
+        style={{
+          background:
+            "linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.45) 76%, rgba(0,0,0,0.6) 100%)",
+        }}
+      />
+      <AbsoluteFill style={{ backgroundColor: RED, opacity: flash, mixBlendMode: "screen" }} />
+    </AbsoluteFill>
+  );
+};
+
+/* ---------------- Anger meter ---------------- */
+
+const AngryFace: React.FC<{ size: number; lv: number }> = ({ size, lv }) => {
+  const c = interpolateColors(lv, [0, 0.5, 1], [YELLOW, ORANGE, RED]);
+  const brow = 6 + 14 * lv;
+  return (
+    <svg viewBox="-50 -50 100 100" width={size} height={size}>
+      <circle r={46} fill={c} />
+      <g stroke={INK} strokeWidth={7} strokeLinecap="round" fill="none">
+        <line x1={-30} y1={-22 + brow * 0.2} x2={-8} y2={-22 + brow} />
+        <line x1={30} y1={-22 + brow * 0.2} x2={8} y2={-22 + brow} />
+        <path d={`M -18 ${24 + 6 * lv} Q 0 ${12 - 4 * lv} 18 ${24 + 6 * lv}`} />
+      </g>
+      <circle cx={-16} cy={0} r={5} fill={INK} />
+      <circle cx={16} cy={0} r={5} fill={INK} />
+    </svg>
+  );
+};
+
+const AngerMeter: React.FC = () => {
+  const { frame, fps, t } = useT();
+  const enter = sp(frame, fps, 2.55, 170, 20);
+  const out = interpolate(t, [11.0, 11.3], [0, 1], clamp);
+  if (t < 2.5) return null;
+  const lv = level(frame, fps);
+  const sh = totalShake(t, 0.5);
+  const fill = interpolateColors(lv, [0, 0.45, 0.8, 1], [YELLOW, ORANGE, RED, "#C80000"]);
+  const maxPulse = t > 10.2 ? 1 + 0.04 * Math.sin((t - 10.2) * 18) : 1;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 230,
+        left: "50%",
+        width: 1500,
+        marginLeft: -750,
+        height: 200,
+        borderRadius: 100,
+        background: "rgba(11,11,11,0.62)",
+        backdropFilter: "blur(20px)",
+        display: "flex",
+        alignItems: "center",
+        padding: "0 30px",
+        gap: 34,
+        opacity: enter * (1 - out),
+        transform: `translate(${sh.x}px, ${(1 - enter) * -160 + sh.y}px) scale(${(0.8 + 0.2 * enter) * maxPulse})`,
+      }}
+    >
+      <div style={{ transform: `scale(${1 + 0.06 * Math.sin(t * 9) * lv})` }}>
+        <AngryFace size={150} lv={lv} />
+      </div>
+      <div
+        style={{
+          fontFamily: LATIN,
+          fontWeight: 900,
+          fontSize: 80,
+          letterSpacing: 8,
+          color: "white",
+        }}
+      >
+        ANGER
+      </div>
+      <div
+        style={{
+          position: "relative",
+          flex: 1,
+          height: 70,
+          marginRight: 30,
+          borderRadius: 35,
+          background: "rgba(255,255,255,0.16)",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            bottom: 0,
+            width: `${Math.max(0, Math.min(1, lv)) * 100}%`,
+            borderRadius: 35,
+            background: `linear-gradient(90deg, ${YELLOW}, ${fill})`,
+          }}
+        />
+        {/* tick marks */}
+        {[0.25, 0.5, 0.75].map((x) => (
+          <div
+            key={x}
+            style={{
+              position: "absolute",
+              left: `${x * 100}%`,
+              top: 14,
+              bottom: 14,
+              width: 6,
+              borderRadius: 3,
+              background: "rgba(11,11,11,0.25)",
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+/* ---------------- "I'm very angry" captions ---------------- */
+
+const RepCaption: React.FC<{ rep: Rep; n: number; next: number }> = ({ rep, n, next }) => {
+  const { frame, fps, t } = useT();
+  if (t < rep.i - 0.05 || t > next + 0.12) return null;
+  const card = sp(frame, fps, rep.i - 0.05, 300, 18);
+  const out = interpolate(t, [next - 0.04, next + 0.1], [0, 1], clamp);
+  const size = 150 + n * 22;
+  const words = [
+    { w: "I'm", s: rep.i },
+    { w: "very", s: rep.v },
+    { w: "angry", s: rep.a },
+  ];
+  const activeIdx = t >= rep.a ? 2 : t >= rep.v ? 1 : 0;
+  const tilt = (n % 2 === 0 ? -1 : 1) * 2.5;
+  return (
+    <AbsoluteFill
+      style={{
+        alignItems: "center",
+        justifyContent: "flex-end",
+        paddingBottom: 780,
+        opacity: card * (1 - out),
+        filter: `blur(${out * 16}px)`,
+        transform: `rotate(${tilt * card}deg) scale(${(0.6 + 0.4 * card) * (1 + out * 0.2)})`,
+      }}
+    >
+      <div
+        style={{
+          fontFamily: LATIN,
+          fontWeight: 900,
+          fontSize: size,
+          lineHeight: 1.2,
+          whiteSpace: "nowrap",
+          textAlign: "center",
+        }}
+      >
+        {words.map((w, idx) => {
+          const e = sp(frame, fps, w.s - 0.03, 320, 18);
+          const act = sp(frame, fps, w.s, 320, 20);
+          const active = idx === activeIdx;
+          const pill = idx === 2 ? RED : idx === 1 ? ORANGE : YELLOW;
+          return (
+            <span
+              key={idx}
+              style={{
+                position: "relative",
+                display: "inline-block",
+                margin: "0 52px",
+                opacity: frame >= sec(w.s - 0.03) ? e : 0,
+                transform: `translateY(${(1 - e) * 60}px) scale(${0.6 + 0.4 * e + (active ? 0.1 * act : 0)})`,
+              }}
+            >
+              {active ? (
+                <span
+                  style={{
+                    position: "absolute",
+                    inset: "8px -30px 0 -30px",
+                    borderRadius: 40,
+                    background: pill,
+                    transform: `scale(${act})`,
+                  }}
+                />
+              ) : null}
+              <span
+                style={{
+                  position: "relative",
+                  textTransform: idx === 2 ? "uppercase" : "none",
+                  color: active ? (idx === 2 ? "white" : INK) : "white",
+                  textShadow: active ? "none" : "0 8px 34px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.5)",
+                }}
+              >
+                {w.w}
+              </span>
+            </span>
+          );
+        })}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+/* ---------------- FURIOUS ---------------- */
+
+const FuryCaption: React.FC<{ f: Fury; big: boolean }> = ({ f, big }) => {
+  const { frame, fps, t } = useT();
+  if (t < f.i - 0.05 || t > f.end + 0.15) return null;
+  const im = sp(frame, fps, f.i - 0.05, 300, 18);
+  const hit = sp(frame, fps, f.f - 0.03, 380, 14);
+  const out = interpolate(t, [f.end - 0.05, f.end + 0.12], [0, 1], clamp);
+  const sh = shakeAt(t, f.f, big ? 40 : 28);
+  const size = big ? 400 : 320;
+  return (
+    <AbsoluteFill
+      style={{
+        alignItems: "center",
+        justifyContent: "flex-end",
+        paddingBottom: big ? 820 : 800,
+        opacity: 1 - out,
+        filter: `blur(${out * 20}px)`,
+        transform: `translate(${sh.x}px, ${sh.y}px)`,
+      }}
+    >
+      <div
+        style={{
+          fontFamily: LATIN,
+          fontWeight: 900,
+          fontSize: 140,
+          color: "white",
+          textShadow: "0 8px 34px rgba(0,0,0,0.6)",
+          opacity: im,
+          transform: `translateY(${(1 - im) * 50}px)`,
+          marginBottom: 10,
+        }}
+      >
+        I&apos;m
+      </div>
+      <div
+        style={{
+          fontFamily: LATIN,
+          fontWeight: 900,
+          fontSize: size,
+          letterSpacing: -8,
+          lineHeight: 1,
+          opacity: frame >= sec(f.f - 0.03) ? Math.min(1, hit * 1.4) : 0,
+          transform: `scale(${interpolate(hit, [0, 1], [2.2, 1])}) rotate(${(1 - hit) * -6}deg)`,
+        }}
+      >
+        <span
+          style={{
+            background: "linear-gradient(180deg,#FFB3A1 0%,#FF3B2F 45%,#B30000 100%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+            filter: "drop-shadow(0 16px 44px rgba(0,0,0,0.6))",
+          }}
+        >
+          FURIOUS
+        </span>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+/* ---------------- Sound effects ---------------- */
+
+type Sfx = { at: number; src: string; vol: number };
+const SFX: Sfx[] = [
+  // A pop each time a caption appears.
+  ...REPS.map((r) => ({ at: r.i - 0.05, src: r.strong ? "sfx/pop.ogg" : "sfx/pop2.ogg", vol: 0.55 })),
+  // A lighter pop as "ANGRY" lands on the stressed lines.
+  ...REPS.filter((r) => r.strong).map((r) => ({ at: r.a - 0.02, src: "sfx/pop2.ogg", vol: 0.35 })),
+  // FURIOUS: pop for "I'm", punch for the word.
+  ...FURY.map((f) => ({ at: f.i - 0.05, src: "sfx/pop.ogg", vol: 0.55 })),
+  ...FURY.map((f, idx) => ({ at: f.f - 0.03, src: "sfx/punch.ogg", vol: idx === 0 ? 0.5 : 0.65 })),
+];
+
+const SoundFx: React.FC = () => (
+  <>
+    {SFX.map((s, k) => (
+      <Sequence key={k} from={sec(s.at)} durationInFrames={sec(1.2)} layout="none">
+        <Audio src={staticFile(s.src)} volume={s.vol} />
+      </Sequence>
+    ))}
+  </>
+);
+
+const Fade: React.FC = () => {
+  const { t } = useT();
+  const inO = interpolate(t, [0, 0.25], [1, 0], { extrapolateRight: "clamp" });
+  const outO = interpolate(t, [11.15, 11.55], [0, 1], clamp);
+  return <AbsoluteFill style={{ backgroundColor: "black", opacity: Math.max(inO, outO) }} />;
+};
+
+export const AngryEdit: React.FC = () => (
+  <AbsoluteFill style={{ backgroundColor: "black" }}>
+    <Footage />
+    <Grade />
+    <AngerMeter />
+    {REPS.map((r, n) => (
+      <RepCaption key={n} rep={r} n={n} next={REPS[n + 1] ? REPS[n + 1].i - 0.05 : r.end} />
+    ))}
+    {FURY.map((f, idx) => (
+      <FuryCaption key={idx} f={f} big={idx === 1} />
+    ))}
+    <SoundFx />
+    <Fade />
+  </AbsoluteFill>
+);
