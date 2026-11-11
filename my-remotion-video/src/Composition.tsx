@@ -1,25 +1,15 @@
-import { CalculateMetadataFunction, Composition } from "remotion";
-
-type Props = {};
-
-const calculateMetadata: CalculateMetadataFunction<Props> = () => {
-  return {};
-};
+import { Composition } from "remotion";
+import { DURATION, Edit, FPS, HEIGHT, WIDTH } from "./Edit";
 
 export const MyComposition = () => {
   return (
     <Composition
-      id="MyComp"
-      component={MyComponent}
-      durationInFrames={60}
-      fps={30}
-      width={1280}
-      height={720}
-      calculateMetadata={calculateMetadata}
+      id="WeatherEdit"
+      component={Edit}
+      durationInFrames={DURATION}
+      fps={FPS}
+      width={WIDTH}
+      height={HEIGHT}
     />
   );
-};
-
-export const MyComponent: React.FC<Props> = () => {
-  return null;
 };
