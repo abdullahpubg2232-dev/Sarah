@@ -148,7 +148,7 @@ const Grade: React.FC = () => {
       {/* Red edge glow that grows with the anger level */}
       <AbsoluteFill
         style={{
-          opacity: lv * 0.75,
+          opacity: lv * 0.45,
           background:
             "radial-gradient(ellipse 70% 58% at 50% 40%, rgba(255,30,30,0) 50%, rgba(255,30,30,0.55) 100%)",
           mixBlendMode: "screen",
