@@ -6,3 +6,4 @@ dist
 # Ignore the output video from Git but not videos you import into src/.
 out
 public/footage.mp4
+public/footage2.mp4
