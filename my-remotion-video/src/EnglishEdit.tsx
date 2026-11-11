@@ -23,11 +23,6 @@ const INK = "#0B0B0B";
 type Word = { w: string; s: number };
 
 // Timings (seconds) from the transcription.
-const AR_LINE: Word[] = [
-  { w: "يعجبني", s: 2.36 },
-  { w: "نتعلم", s: 2.86 },
-  { w: "الإنجليزية", s: 3.2 },
-];
 const EN_1: Word[] = [
   { w: "I", s: 4.55 },
   { w: "love", s: 5.32 },
@@ -261,57 +256,6 @@ const Salam: React.FC = () => {
         >
           SALAM
         </div>
-      </div>
-    </AbsoluteFill>
-  );
-};
-
-/* ---------------- Arabic subtitle (2.36 – 4.5 s) ---------------- */
-
-const ArabicLine: React.FC = () => {
-  const { frame, fps, t } = useT();
-  const box = sp(frame, fps, 2.3, 170, 20);
-  const out = interpolate(t, [4.3, 4.55], [0, 1], clamp);
-  if (t < 2.25 || t > 4.65) return null;
-  return (
-    <AbsoluteFill style={{ alignItems: "center", justifyContent: "flex-end", paddingBottom: 800 }}>
-      <div
-        dir="rtl"
-        style={{
-          display: "flex",
-          gap: 40,
-          padding: "40px 80px 60px",
-          borderRadius: 64,
-          background: "rgba(11,11,11,0.58)",
-          backdropFilter: "blur(22px)",
-          opacity: box * (1 - out),
-          filter: `blur(${out * 18}px)`,
-          transform: `scale(${0.85 + 0.15 * box}) translateY(${(1 - box) * 60 - out * 60}px)`,
-          fontFamily: ARABIC,
-          fontWeight: 900,
-          fontSize: 150,
-          lineHeight: 1.35,
-        }}
-      >
-        {AR_LINE.map((w, i) => {
-          const e = sp(frame, fps, w.s - 0.04, 260, 18);
-          const next = AR_LINE[i + 1];
-          const active = t >= w.s && t < (next ? next.s : 4.4);
-          return (
-            <span
-              key={i}
-              style={{
-                display: "inline-block",
-                color: active ? YELLOW : "white",
-                opacity: frame >= sec(w.s - 0.04) ? e : 0,
-                transform: `translateY(${(1 - e) * 60}px) scale(${0.75 + 0.25 * e})`,
-                filter: `blur(${(1 - e) * 12}px)`,
-              }}
-            >
-              {w.w}
-            </span>
-          );
-        })}
       </div>
     </AbsoluteFill>
   );
@@ -639,7 +583,6 @@ export const EnglishEdit: React.FC = () => (
     <Grade />
     <LangPill />
     <Salam />
-    <ArabicLine />
     <EnglishOne />
     <EnglishTwo />
     <Peace />
