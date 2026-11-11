@@ -4,3 +4,4 @@ motion/
 __pycache__/
 *.pyc
 skill-zips/
+out/
