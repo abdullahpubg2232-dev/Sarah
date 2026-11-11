@@ -396,7 +396,7 @@ const EnglishOne: React.FC = () => {
                 style={{
                   position: "relative",
                   display: "inline-block",
-                  margin: "0 24px",
+                  margin: "0 60px",
                   opacity: frame >= sec(w.s - 0.04) ? e : 0,
                   filter: `blur(${(1 - e) * 14}px)`,
                   transform: `translateY(${(1 - e) * 70}px) scale(${0.7 + 0.3 * e + (active ? 0.08 * act : 0)})`,
