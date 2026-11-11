@@ -17,7 +17,9 @@ import { loadFonts, LATIN } from "./fonts";
 loadFonts();
 
 export const AN_FPS = 60;
-export const AN_DURATION = 693; // 11.55 s
+export const AN_DURATION = 804; // 11.55 s of footage + lesson summary card
+const FOOTAGE_END = 11.55;
+const SUMMARY = 11.3;
 
 const INK = "#0B0B0B";
 const YELLOW = "#FFD23F";
@@ -412,6 +414,186 @@ const FuryCaption: React.FC<{ f: Fury; big: boolean }> = ({ f, big }) => {
   );
 };
 
+/* ---------------- Lesson: title card (0.3 – 2.6 s) ---------------- */
+
+const LessonTitle: React.FC = () => {
+  const { frame, fps, t } = useT();
+  const tag = sp(frame, fps, 0.3, 200, 18);
+  const a = sp(frame, fps, 0.5, 200, 17);
+  const b = sp(frame, fps, 0.75, 200, 17);
+  const c = sp(frame, fps, 1.0, 200, 17);
+  const out = interpolate(t, [2.35, 2.62], [0, 1], { ...clamp, easing: Easing.in(Easing.cubic) });
+  if (t > 2.7) return null;
+  const word = (e: number, extra: React.CSSProperties) => ({
+    display: "inline-block",
+    opacity: e,
+    transform: `translateY(${(1 - e) * 70}px) scale(${0.6 + 0.4 * e})`,
+    filter: `blur(${(1 - e) * 12}px)`,
+    ...extra,
+  });
+  return (
+    <AbsoluteFill
+      style={{
+        alignItems: "center",
+        justifyContent: "flex-end",
+        paddingBottom: 760,
+        opacity: 1 - out,
+        filter: `blur(${out * 22}px)`,
+        transform: `translateY(${-out * 70}px)`,
+      }}
+    >
+      <div
+        style={{
+          padding: "22px 54px",
+          borderRadius: 999,
+          background: YELLOW,
+          color: INK,
+          fontFamily: LATIN,
+          fontWeight: 900,
+          fontSize: 76,
+          letterSpacing: 12,
+          marginBottom: 50,
+          opacity: tag,
+          transform: `scale(${0.7 + 0.3 * tag})`,
+        }}
+      >
+        ENGLISH LESSON
+      </div>
+      <div
+        style={{
+          fontFamily: LATIN,
+          fontWeight: 900,
+          fontSize: 210,
+          lineHeight: 1.1,
+          textAlign: "center",
+          whiteSpace: "nowrap",
+          textShadow: "0 12px 44px rgba(0,0,0,0.6)",
+        }}
+      >
+        <span style={word(a, { color: "white" })}>Angry</span>{" "}
+        <span style={word(b, { color: "rgba(255,255,255,0.75)", fontSize: 130, margin: "0 30px" })}>vs</span>{" "}
+        <span
+          style={word(c, {
+            background: "linear-gradient(180deg,#FFB3A1 0%,#FF3B2F 50%,#B30000 100%)",
+            WebkitBackgroundClip: "text",
+            backgroundClip: "text",
+            color: "transparent",
+          })}
+        >
+          Furious
+        </span>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+/* ---------------- Lesson: vocabulary cards ---------------- */
+
+const VocabCard: React.FC<{ word: string; meaning: string; color: string; from: number; to: number }> = ({
+  word,
+  meaning,
+  color,
+  from,
+  to,
+}) => {
+  const { frame, fps, t } = useT();
+  const e = sp(frame, fps, from, 210, 19);
+  const out = interpolate(t, [to - 0.25, to], [0, 1], clamp);
+  if (t < from - 0.05 || t > to + 0.05) return null;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 470,
+        left: "50%",
+        width: 1300,
+        marginLeft: -650,
+        display: "flex",
+        alignItems: "center",
+        gap: 40,
+        padding: "34px 50px",
+        borderRadius: 56,
+        background: "rgba(255,255,255,0.95)",
+        boxShadow: "0 30px 80px rgba(0,0,0,0.35)",
+        opacity: e * (1 - out),
+        transform: `translateY(${(1 - e) * -80 - out * 40}px) scale(${0.85 + 0.15 * e})`,
+        fontFamily: LATIN,
+      }}
+    >
+      <div style={{ width: 22, alignSelf: "stretch", borderRadius: 11, background: color }} />
+      <div>
+        <div style={{ fontWeight: 900, fontSize: 96, color, letterSpacing: 4, lineHeight: 1.1 }}>{word}</div>
+        <div style={{ fontWeight: 800, fontSize: 70, color: INK, lineHeight: 1.2 }}>= {meaning}</div>
+      </div>
+    </div>
+  );
+};
+
+/* ---------------- Lesson: summary card (11.3 s →) ---------------- */
+
+const Summary: React.FC = () => {
+  const { frame, fps, t } = useT();
+  const bg = interpolate(t, [SUMMARY - 0.1, SUMMARY + 0.3], [0, 1], clamp);
+  const head = sp(frame, fps, SUMMARY + 0.15, 200, 18);
+  const r1 = sp(frame, fps, SUMMARY + 0.45, 200, 18);
+  const r2 = sp(frame, fps, SUMMARY + 0.85, 200, 18);
+  const b1 = interpolate(t, [SUMMARY + 0.55, SUMMARY + 1.1], [0, 0.65], { ...clamp, easing: Easing.out(Easing.cubic) });
+  const b2 = interpolate(t, [SUMMARY + 0.95, SUMMARY + 1.5], [0, 1], { ...clamp, easing: Easing.out(Easing.cubic) });
+  if (t < SUMMARY - 0.15) return null;
+  const row = (e: number, label: string, fill: number, color: string, note: string) => (
+    <div style={{ opacity: e, transform: `translateX(${(1 - e) * -120}px)`, marginBottom: 90 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 26 }}>
+        <span style={{ fontWeight: 900, fontSize: 130, color: "white" }}>{label}</span>
+        <span style={{ fontWeight: 800, fontSize: 64, color: "rgba(255,255,255,0.7)" }}>{note}</span>
+      </div>
+      <div style={{ height: 70, borderRadius: 35, background: "rgba(255,255,255,0.14)", overflow: "hidden" }}>
+        <div
+          style={{
+            width: `${fill * 100}%`,
+            height: "100%",
+            borderRadius: 35,
+            background: `linear-gradient(90deg, ${YELLOW}, ${color})`,
+          }}
+        />
+      </div>
+    </div>
+  );
+  return (
+    <AbsoluteFill
+      style={{
+        opacity: bg,
+        background: "radial-gradient(ellipse 90% 70% at 50% 45%, #3A0A0A 0%, #120303 70%, #070101 100%)",
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: LATIN,
+      }}
+    >
+      <div style={{ width: 1700 }}>
+        <div
+          style={{
+            display: "inline-block",
+            padding: "22px 54px",
+            borderRadius: 999,
+            background: YELLOW,
+            color: INK,
+            fontWeight: 900,
+            fontSize: 76,
+            letterSpacing: 12,
+            marginBottom: 120,
+            opacity: head,
+            transform: `scale(${0.7 + 0.3 * head})`,
+            transformOrigin: "0 50%",
+          }}
+        >
+          REMEMBER
+        </div>
+        {row(r1, "very angry", b1, ORANGE, "strong")}
+        {row(r2, "furious", b2, RED, "stronger!")}
+      </div>
+    </AbsoluteFill>
+  );
+};
+
 /* ---------------- Sound effects ---------------- */
 
 type Sfx = { at: number; src: string; vol: number };
@@ -420,6 +602,14 @@ const SFX: Sfx[] = [
   ...REPS.map((r) => ({ at: r.i - 0.05, src: r.strong ? "sfx/pop.ogg" : "sfx/pop2.ogg", vol: 0.55 })),
   // A lighter pop as "ANGRY" lands on the stressed lines.
   ...REPS.filter((r) => r.strong).map((r) => ({ at: r.a - 0.02, src: "sfx/pop2.ogg", vol: 0.35 })),
+  // Lesson graphics.
+  { at: 0.3, src: "sfx/pop.ogg", vol: 0.5 },
+  { at: 1.0, src: "sfx/pop2.ogg", vol: 0.4 },
+  { at: 3.3, src: "sfx/pop2.ogg", vol: 0.4 },
+  { at: 8.9, src: "sfx/pop2.ogg", vol: 0.4 },
+  { at: SUMMARY + 0.15, src: "sfx/pop.ogg", vol: 0.5 },
+  { at: SUMMARY + 0.45, src: "sfx/pop2.ogg", vol: 0.45 },
+  { at: SUMMARY + 0.85, src: "sfx/pop2.ogg", vol: 0.45 },
   // FURIOUS: pop for "I'm", punch for the word.
   ...FURY.map((f) => ({ at: f.i - 0.05, src: "sfx/pop.ogg", vol: 0.55 })),
   ...FURY.map((f, idx) => ({ at: f.f - 0.03, src: "sfx/punch.ogg", vol: idx === 0 ? 0.5 : 0.65 })),
@@ -438,14 +628,19 @@ const SoundFx: React.FC = () => (
 const Fade: React.FC = () => {
   const { t } = useT();
   const inO = interpolate(t, [0, 0.25], [1, 0], { extrapolateRight: "clamp" });
-  const outO = interpolate(t, [11.15, 11.55], [0, 1], clamp);
+  const outO = interpolate(t, [13.05, 13.4], [0, 1], clamp);
   return <AbsoluteFill style={{ backgroundColor: "black", opacity: Math.max(inO, outO) }} />;
 };
 
 export const AngryEdit: React.FC = () => (
   <AbsoluteFill style={{ backgroundColor: "black" }}>
-    <Footage />
+    <Sequence durationInFrames={sec(FOOTAGE_END)} layout="none">
+      <Footage />
+    </Sequence>
     <Grade />
+    <LessonTitle />
+    <VocabCard word="ANGRY" meaning="upset, mad" color={ORANGE} from={3.3} to={6.4} />
+    <VocabCard word="FURIOUS" meaning="extremely angry" color={RED} from={8.9} to={11.1} />
     <AngerMeter />
     {REPS.map((r, n) => (
       <RepCaption key={n} rep={r} n={n} next={REPS[n + 1] ? REPS[n + 1].i - 0.05 : r.end} />
@@ -453,6 +648,7 @@ export const AngryEdit: React.FC = () => (
     {FURY.map((f, idx) => (
       <FuryCaption key={idx} f={f} big={idx === 1} />
     ))}
+    <Summary />
     <SoundFx />
     <Fade />
   </AbsoluteFill>
