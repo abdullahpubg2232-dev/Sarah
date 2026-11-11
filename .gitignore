@@ -3,3 +3,4 @@ motion/
 .DS_Store
 __pycache__/
 *.pyc
+skill-zips/
