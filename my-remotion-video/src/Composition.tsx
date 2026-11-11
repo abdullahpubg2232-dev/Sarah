@@ -1,4 +1,5 @@
-import { Composition } from "remotion";
+import { Composition, Still } from "remotion";
+import { Cover } from "./Cover";
 import { DURATION, Edit, FPS, HEIGHT, WIDTH } from "./Edit";
 import { EN_DURATION, EN_FPS, EnglishEdit } from "./EnglishEdit";
 import { AN_DURATION, AN_FPS, AngryEdit } from "./AngryEdit";
@@ -30,6 +31,7 @@ export const MyComposition = () => {
         width={WIDTH}
         height={HEIGHT}
       />
+      <Still id="AngryCover" component={Cover} width={WIDTH} height={HEIGHT} />
     </>
   );
 };
