@@ -8,5 +8,42 @@
   },
   "media": {
     "autoProxy": true
-  }
+  },
+  "registryItems": [
+    {
+      "name": "headline-slam",
+      "type": "hyperframes:component",
+      "target": "compositions/components/headline-slam.html"
+    },
+    {
+      "name": "caption-kinetic-slam",
+      "type": "hyperframes:component",
+      "target": "compositions/components/caption-kinetic-slam.html"
+    },
+    {
+      "name": "caption-glitch-rgb",
+      "type": "hyperframes:component",
+      "target": "compositions/components/caption-glitch-rgb.html"
+    },
+    {
+      "name": "camera-shake",
+      "type": "hyperframes:component",
+      "target": "compositions/components/camera-shake.html"
+    },
+    {
+      "name": "beat-accent",
+      "type": "hyperframes:component",
+      "target": "compositions/components/beat-accent.html"
+    },
+    {
+      "name": "mk-usage-arc",
+      "type": "hyperframes:component",
+      "target": "compositions/components/mk-usage-arc.html"
+    },
+    {
+      "name": "tiktok-follow",
+      "type": "hyperframes:block",
+      "target": "compositions/tiktok-follow.html"
+    }
+  ]
 }
