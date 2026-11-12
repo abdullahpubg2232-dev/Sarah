@@ -1,0 +1,100 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .cd {
+      position: absolute;
+      left: 720px;
+      top: 440px;
+      width: 1120px;
+      height: 400px;
+    }
+    .cd-note {
+      position: absolute;
+      inset: 0;
+      padding: 70px 70px 0;
+      border-radius: 14px;
+      box-shadow: 0 36px 90px rgba(0, 0, 0, 0.4);
+    }
+    #cd1-note {
+      background: #ffe066;
+    }
+    #cd2-note {
+      background: #ff9a8f;
+    }
+    .cd-tape {
+      position: absolute;
+      left: 420px;
+      top: -36px;
+      width: 280px;
+      height: 76px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    }
+    .cd-word {
+      font-family: "League Gothic", sans-serif;
+      font-size: 190px;
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+    #cd1-word {
+      color: #e01b1b;
+    }
+    #cd2-word {
+      color: #8a0000;
+    }
+    .cd-mean {
+      margin-top: 18px;
+      font-family: "Inter", sans-serif;
+      font-weight: 900;
+      font-size: 84px;
+      line-height: 1.1;
+      color: #0b0b0b;
+      white-space: nowrap;
+    }
+  </style>
+  <div id="root" data-composition-id="cards" data-width="2160" data-height="3840">
+    <div id="cd1" class="clip cd" data-start="0.1" data-duration="3.25" data-track-index="0">
+      <div id="cd1-note" class="cd-note">
+        <div id="cd1-word" class="cd-word">ANGRY</div>
+        <div class="cd-mean">= upset, mad</div>
+      </div>
+      <div id="cd1-tape" class="cd-tape"></div>
+    </div>
+    <div id="cd2" class="clip cd" data-start="5.7" data-duration="2.25" data-track-index="1">
+      <div id="cd2-note" class="cd-note">
+        <div id="cd2-word" class="cd-word">FURIOUS</div>
+        <div class="cd-mean">= extremely angry</div>
+      </div>
+      <div id="cd2-tape" class="cd-tape"></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Sticky note flies in from the right and sticks with a tilt.
+    [
+      ["#cd1-note", "#cd1-tape", 0.1, 3.35],
+      ["#cd2-note", "#cd2-tape", 5.7, 7.95],
+    ].forEach(([note, tape, s, e]) => {
+      tl.fromTo(
+        note,
+        { x: 1300, rotation: 14, opacity: 0 },
+        { x: 0, rotation: -3, opacity: 1, duration: 0.38, ease: "back.out(1.5)" },
+        s,
+      );
+      tl.fromTo(
+        tape,
+        { opacity: 0, scale: 1.6, rotation: 10 },
+        { opacity: 1, scale: 1, rotation: -6, duration: 0.18, ease: "power4.in" },
+        s + 0.3,
+      );
+      tl.to([note, tape], { y: -70, opacity: 0, duration: 0.2, ease: "power2.in" }, e - 0.22);
+    });
+
+    window.__timelines["cards"] = tl;
+  </script>
+</template>

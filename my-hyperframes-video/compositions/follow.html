@@ -1,0 +1,508 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Cairo";
+      src: url("assets/fonts/cairo-900.woff2") format("woff2");
+      font-weight: 900;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      --blue: #1877f2;
+      --yellow: #ffd23f;
+      --muted: #b0b3b8;
+    }
+    #fo-bg {
+      position: absolute;
+      inset: 0;
+      background: #07090f;
+    }
+    #fo-photo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2160px;
+      height: 3840px;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+    #fo-tint {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse 80% 55% at 50% 52%,
+        rgba(24, 119, 242, 0.32) 0%,
+        rgba(7, 9, 15, 0.55) 55%,
+        rgba(7, 9, 15, 0.92) 100%
+      );
+    }
+    #fo-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 820px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+    }
+    #fo-title-text {
+      font-family: "Inter", sans-serif;
+      font-weight: 900;
+      font-size: 160px;
+      line-height: 1;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+    #fo-sub {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1060px;
+      text-align: center;
+      font-family: "Cairo", sans-serif;
+      font-weight: 900;
+      font-size: 110px;
+      line-height: 1.3;
+      color: var(--yellow);
+    }
+    #fo-card {
+      position: absolute;
+      left: 180px;
+      top: 1900px;
+      width: 1800px;
+      height: 1180px;
+      border-radius: 90px;
+      background: linear-gradient(160deg, rgba(58, 59, 60, 0.94), rgba(36, 37, 38, 0.94));
+      border: 3px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 60px 160px rgba(0, 0, 0, 0.6);
+      overflow: visible;
+    }
+    #fo-sweep-clip {
+      position: absolute;
+      inset: 0;
+      border-radius: 90px;
+      overflow: hidden;
+    }
+    #fo-sweep {
+      position: absolute;
+      top: -200px;
+      left: -500px;
+      width: 380px;
+      height: 1580px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0));
+    }
+    #fo-avatar {
+      position: absolute;
+      left: 580px;
+      top: -320px;
+      width: 640px;
+      height: 640px;
+    }
+    #fo-pfp {
+      position: absolute;
+      left: 36px;
+      top: 36px;
+      width: 568px;
+      height: 568px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    #fo-dot {
+      position: absolute;
+      left: 440px;
+      top: 440px;
+      width: 152px;
+      height: 152px;
+      border-radius: 50%;
+      background: #31a24c;
+      border: 16px solid #343536;
+    }
+    .fo-line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: "Inter", sans-serif;
+      white-space: nowrap;
+    }
+    #fo-name {
+      top: 380px;
+      font-weight: 900;
+      font-size: 112px;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+    #fo-stats {
+      top: 540px;
+      font-weight: 700;
+      font-size: 76px;
+      line-height: 100px;
+      color: #ffffff;
+    }
+    #fo-count {
+      position: relative;
+      display: inline-block;
+      width: 160px;
+      height: 100px;
+      overflow: hidden;
+      vertical-align: top;
+      text-align: right;
+    }
+    #fo-n1,
+    #fo-n2 {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    #fo-n2 {
+      color: var(--yellow);
+    }
+    #fo-dc {
+      top: 660px;
+      font-weight: 700;
+      font-size: 62px;
+      line-height: 1.2;
+      color: var(--muted);
+    }
+    #fo-btns {
+      position: absolute;
+      left: 120px;
+      top: 840px;
+      width: 1560px;
+      height: 190px;
+    }
+    .fo-btn {
+      position: absolute;
+      top: 0;
+      width: 760px;
+      height: 190px;
+      border-radius: 40px;
+      overflow: hidden;
+      font-family: "Inter", sans-serif;
+      font-weight: 700;
+      font-size: 82px;
+      line-height: 190px;
+      color: #ffffff;
+      text-align: center;
+    }
+    #fo-follow {
+      left: 0;
+      background: var(--blue);
+      box-shadow: 0 20px 50px rgba(24, 119, 242, 0.45);
+    }
+    #fo-msg {
+      left: 800px;
+      background: rgba(255, 255, 255, 0.14);
+    }
+    .fo-btn-label {
+      position: absolute;
+      inset: 0;
+    }
+    .fo-btn-label svg {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 26px;
+      margin-top: -12px;
+    }
+    #fo-ripple {
+      position: absolute;
+      left: -70px;
+      top: -355px;
+      width: 900px;
+      height: 900px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.35);
+      opacity: 0;
+    }
+    #fo-rays {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 760px;
+      height: 190px;
+    }
+    .fo-ray {
+      position: absolute;
+      left: 373px;
+      top: 65px;
+      width: 14px;
+      height: 60px;
+      border-radius: 7px;
+      opacity: 0;
+    }
+    #fo-hand {
+      position: absolute;
+      left: 470px;
+      top: 2870px;
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+    #fo-toast {
+      position: absolute;
+      left: 200px;
+      top: 400px;
+      width: 1760px;
+      height: 230px;
+      padding: 40px 56px;
+      border-radius: 64px;
+      background: rgba(255, 255, 255, 0.97);
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45);
+      opacity: 0;
+    }
+    #fo-toast-icon {
+      position: absolute;
+      left: 56px;
+      top: 40px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #31a24c;
+    }
+    #fo-toast-text {
+      position: absolute;
+      left: 250px;
+      top: 42px;
+      font-family: "Inter", sans-serif;
+      white-space: nowrap;
+    }
+    #fo-toast-1 {
+      font-weight: 900;
+      font-size: 80px;
+      line-height: 1.2;
+      color: #0b0b0b;
+    }
+    #fo-toast-2 {
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 1.2;
+      color: #65676b;
+    }
+    #fo-black {
+      position: absolute;
+      inset: 0;
+      background: #000000;
+      opacity: 0;
+    }
+  </style>
+  <div id="root" data-composition-id="follow" data-width="2160" data-height="3840">
+    <div id="fo-bg" class="clip" data-start="0" data-duration="3.8" data-track-index="0">
+      <img id="fo-photo" src="assets/follow-bg.jpg" alt="" />
+      <div id="fo-tint"></div>
+    </div>
+
+    <div id="fo-title">
+      <svg id="fo-bell" viewBox="0 0 24 24" width="170" height="170">
+        <path
+          d="M12 3a6 6 0 0 0-6 6v3.6L4.4 15.4c-.4.7.1 1.6.9 1.6h13.4c.8 0 1.3-.9.9-1.6L18 12.6V9a6 6 0 0 0-6-6z"
+          fill="#ffd23f"
+        />
+        <path d="M9.5 19a2.5 2.5 0 0 0 5 0" fill="#ffd23f" />
+      </svg>
+      <div id="fo-title-text">FOLLOW FOR MORE</div>
+    </div>
+    <div id="fo-sub" dir="rtl">تابعني باش متفوتكش الدروس الجاية</div>
+
+    <div id="fo-card" data-layout-allow-overflow>
+      <div id="fo-sweep-clip"><div id="fo-sweep"></div></div>
+      <div id="fo-avatar">
+        <svg viewBox="0 0 640 640" width="640" height="640" style="position: absolute; left: 0; top: 0">
+          <circle cx="320" cy="320" r="309" fill="#343536" />
+          <circle
+            id="fo-ring"
+            cx="320"
+            cy="320"
+            r="309"
+            fill="none"
+            stroke="#1877f2"
+            stroke-width="22"
+            stroke-linecap="round"
+            stroke-dasharray="1941.5"
+            stroke-dashoffset="1941.5"
+            transform="rotate(-90 320 320)"
+          />
+        </svg>
+        <img id="fo-pfp" src="assets/pfp.jpg" alt="English Mastery with Sara" />
+        <div id="fo-dot"></div>
+      </div>
+      <div id="fo-name" class="fo-line">English Mastery with Sara</div>
+      <div id="fo-stats" class="fo-line">
+        <span id="fo-count" data-layout-allow-overlap><span id="fo-n1">302</span><span id="fo-n2">303</span></span>
+        followers <span style="color: #b0b3b8">·</span> 24 following
+      </div>
+      <div id="fo-dc" class="fo-line">Digital creator</div>
+      <div id="fo-btns">
+        <div id="fo-rays" data-layout-ignore>
+          <div class="fo-ray" id="fo-ray-0"></div>
+          <div class="fo-ray" id="fo-ray-1"></div>
+          <div class="fo-ray" id="fo-ray-2"></div>
+          <div class="fo-ray" id="fo-ray-3"></div>
+          <div class="fo-ray" id="fo-ray-4"></div>
+          <div class="fo-ray" id="fo-ray-5"></div>
+          <div class="fo-ray" id="fo-ray-6"></div>
+          <div class="fo-ray" id="fo-ray-7"></div>
+          <div class="fo-ray" id="fo-ray-8"></div>
+          <div class="fo-ray" id="fo-ray-9"></div>
+          <div class="fo-ray" id="fo-ray-10"></div>
+          <div class="fo-ray" id="fo-ray-11"></div>
+        </div>
+        <div id="fo-follow" class="fo-btn">
+          <div id="fo-ripple"></div>
+          <div id="fo-lbl-follow" class="fo-btn-label">
+            <svg viewBox="0 0 24 24" width="80" height="80">
+              <path d="M12 4v16M4 12h16" stroke="#fff" stroke-width="3.2" stroke-linecap="round" />
+            </svg>Follow
+          </div>
+          <div id="fo-lbl-following" class="fo-btn-label" style="opacity: 0">
+            <svg viewBox="0 0 24 24" width="80" height="80">
+              <path
+                id="fo-check"
+                d="M4 12.5l5 5L20 6.5"
+                stroke="#fff"
+                stroke-width="3.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+                stroke-dasharray="26"
+                stroke-dashoffset="26"
+              />
+            </svg>Following
+          </div>
+        </div>
+        <div id="fo-msg" class="fo-btn">
+          <div class="fo-btn-label">
+            <svg viewBox="0 0 24 24" width="86" height="86">
+              <path
+                d="M12 3C6.9 3 3 6.7 3 11.4c0 2.6 1.2 4.9 3.2 6.4V21l3-1.7c.9.2 1.8.4 2.8.4 5.1 0 9-3.7 9-8.4S17.1 3 12 3z"
+                fill="#fff"
+              />
+              <path d="M7.5 13.5l3-3 2.2 2 3.8-3.5-3 3.6-2.2-2z" fill="#1877f2" stroke="#1877f2" stroke-width="1.2" stroke-linejoin="round" />
+            </svg>Message
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg id="fo-hand" viewBox="0 0 64 64" data-layout-ignore>
+      <path
+        d="M24 6c3 0 5 2.2 5 5v17l2-1.2c2.6-1.4 5.6.3 5.9 3.2l.1.9 1.6-.8c2.6-1.3 5.6.4 5.8 3.3l.1 1.3 1.4-.6c2.7-1.1 5.6.8 5.6 3.7V48c0 7.7-6.3 14-14 14h-6.2c-4.4 0-8.5-2.1-11.1-5.6L9.6 42.4c-1.8-2.4-1.2-5.8 1.3-7.4 2.2-1.4 5.1-1 6.8 1l1.3 1.5V11c0-2.8 2.2-5 5-5z"
+        fill="#fff"
+        stroke="#0b0b0b"
+        stroke-width="2.5"
+        stroke-linejoin="round"
+      />
+    </svg>
+
+    <div id="fo-toast">
+      <div id="fo-toast-icon">
+        <svg viewBox="0 0 24 24" width="150" height="150">
+          <path
+            id="fo-toast-check"
+            d="M6.5 12.5l3.6 3.6 7.4-8"
+            stroke="#fff"
+            stroke-width="2.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+            stroke-dasharray="20"
+            stroke-dashoffset="20"
+          />
+        </svg>
+      </div>
+      <div id="fo-toast-text">
+        <div id="fo-toast-1">You're now following</div>
+        <div id="fo-toast-2">English Mastery with Sara</div>
+      </div>
+    </div>
+
+    <div id="fo-black"></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    const TAP = 1.85;
+    const EXIT = 3.25;
+
+    // Background and staggered pop-ins.
+    tl.fromTo("#fo-bg", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, 0);
+    tl.fromTo("#fo-photo", { scale: 1.12 }, { scale: 1.2, duration: 3.8, ease: "none" }, 0);
+    const pop = (sel, at, from) =>
+      tl.fromTo(
+        sel,
+        Object.assign({ opacity: 0, scale: 0.82, y: 50 }, from || {}),
+        { opacity: 1, scale: 1, y: 0, duration: 0.42, ease: "back.out(1.8)" },
+        at,
+      );
+    pop("#fo-title", 0.1, { y: -70 });
+    pop("#fo-sub", 0.22);
+    tl.fromTo(
+      "#fo-card",
+      { opacity: 0, y: 300, rotationX: 28, scale: 0.88, transformPerspective: 2400, transformOrigin: "50% 100%" },
+      { opacity: 1, y: 0, rotationX: 0, scale: 1, duration: 0.6, ease: "back.out(1.4)" },
+      0.32,
+    );
+    tl.fromTo("#fo-avatar", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(2.6)" }, 0.48);
+    tl.to("#fo-ring", { attr: { "stroke-dashoffset": 0 }, duration: 0.55, ease: "power2.inOut" }, 0.5);
+    tl.fromTo("#fo-dot", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(3)" }, 0.9);
+    pop("#fo-name", 0.62);
+    pop("#fo-stats", 0.7);
+    pop("#fo-dc", 0.78);
+    pop("#fo-btns", 0.86, { y: 70 });
+    tl.fromTo("#fo-sweep", { x: 0, rotation: 18 }, { x: 2700, rotation: 18, duration: 0.7, ease: "power2.inOut" }, 1.0);
+
+    // Finger slides in and taps Follow.
+    tl.fromTo(
+      "#fo-hand",
+      { x: 1230, y: 1030, opacity: 0, rotation: -12 },
+      { x: 0, y: 0, opacity: 1, rotation: -12, duration: 0.55, ease: "power3.out" },
+      1.15,
+    );
+    tl.to("#fo-hand", { scale: 0.88, duration: 0.08, ease: "power2.in" }, TAP - 0.08);
+    tl.to("#fo-hand", { scale: 1, duration: 0.12, ease: "power2.out" }, TAP);
+    tl.to("#fo-hand", { x: 900, y: 700, opacity: 0, duration: 0.35, ease: "power3.in" }, 2.4);
+
+    tl.to("#fo-follow", { scale: 0.94, duration: 0.08, ease: "power2.in" }, TAP - 0.08);
+    tl.to("#fo-follow", { scale: 1, duration: 0.45, ease: "elastic.out(1, 0.4)" }, TAP);
+    tl.to("#fo-follow", { backgroundColor: "rgba(255,255,255,0.14)", boxShadow: "0 0 0 rgba(0,0,0,0)", duration: 0.15, ease: "none" }, TAP + 0.03);
+    tl.fromTo("#fo-ripple", { scale: 0, opacity: 1 }, { scale: 1, opacity: 0, duration: 0.5, ease: "power2.out" }, TAP);
+    tl.to("#fo-lbl-follow", { opacity: 0, y: -30, duration: 0.1, ease: "power2.in" }, TAP + 0.03);
+    tl.fromTo("#fo-lbl-following", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.15, ease: "power2.out" }, TAP + 0.08);
+    tl.to("#fo-check", { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power2.out" }, TAP + 0.1);
+
+    // Burst of rays around the button.
+    for (let k = 0; k < 12; k++) {
+      const a = (k / 12) * Math.PI * 2;
+      const deg = (a * 180) / Math.PI + 90;
+      tl.set(`#fo-ray-${k}`, { backgroundColor: k % 2 ? "#ffd23f" : "#ffffff", rotation: deg }, 0);
+      tl.fromTo(
+        `#fo-ray-${k}`,
+        { x: Math.cos(a) * 437, y: Math.sin(a) * 172, opacity: 1, scaleY: 1 },
+        { x: Math.cos(a) * 741, y: Math.sin(a) * 292, opacity: 0, scaleY: 0.2, duration: 0.45, ease: "power3.out" },
+        TAP + 0.02,
+      );
+    }
+
+    // Follower count rolls 302 → 303.
+    tl.fromTo("#fo-n1", { y: 0, opacity: 1 }, { y: -100, opacity: 0, duration: 0.3, ease: "back.in(1.4)" }, TAP + 0.12);
+    tl.fromTo("#fo-n2", { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(2)" }, TAP + 0.15);
+
+    // Bell rings.
+    [22, -18, 14, -10, 6, 0].forEach((r, i) => {
+      tl.to("#fo-bell", { rotation: r, transformOrigin: "50% 10%", duration: 0.07, ease: "sine.inOut" }, TAP + 0.1 + i * 0.07);
+    });
+
+    // Toast notification drops in, then leaves.
+    tl.fromTo("#fo-toast", { y: -420, opacity: 0, scale: 0.9 }, { y: 0, opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.7)" }, 2.05);
+    tl.fromTo("#fo-toast-icon", { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(3)" }, 2.15);
+    tl.to("#fo-toast-check", { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power2.out" }, 2.2);
+
+    // Exit: everything pops out in reverse order.
+    ["#fo-btns", "#fo-dc", "#fo-stats", "#fo-name", "#fo-avatar", "#fo-card", "#fo-sub", "#fo-title"].forEach((sel, i) => {
+      tl.to(sel, { opacity: 0, scale: 0.4, duration: 0.22, ease: "back.in(1.6)" }, EXIT + i * 0.045);
+    });
+    tl.to("#fo-black", { opacity: 1, duration: 0.25, ease: "power2.in" }, 3.55);
+
+    window.__timelines["follow"] = tl;
+  </script>
+</template>
