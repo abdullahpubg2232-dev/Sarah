@@ -18,7 +18,7 @@ import { FollowOutro } from "./FollowOutro";
 loadFonts();
 
 export const AN_FPS = 60;
-export const AN_DURATION = 1008; // footage + lesson summary + follow outro (16.8 s)
+export const AN_DURATION = 1044; // footage + lesson summary + follow outro (17.4 s)
 const FOOTAGE_END = 11.55;
 const SUMMARY = 11.3;
 const OUTRO = 13.2;
