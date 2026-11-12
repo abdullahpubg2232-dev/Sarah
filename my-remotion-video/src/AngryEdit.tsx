@@ -13,13 +13,15 @@ import {
   useVideoConfig,
 } from "remotion";
 import { loadFonts, LATIN } from "./fonts";
+import { FollowOutro } from "./FollowOutro";
 
 loadFonts();
 
 export const AN_FPS = 60;
-export const AN_DURATION = 804; // 11.55 s of footage + lesson summary card
+export const AN_DURATION = 1008; // footage + lesson summary + follow outro (16.8 s)
 const FOOTAGE_END = 11.55;
 const SUMMARY = 11.3;
+const OUTRO = 13.2;
 
 const INK = "#0B0B0B";
 const YELLOW = "#FFD23F";
@@ -628,7 +630,7 @@ const SoundFx: React.FC = () => (
 const Fade: React.FC = () => {
   const { t } = useT();
   const inO = interpolate(t, [0, 0.25], [1, 0], { extrapolateRight: "clamp" });
-  const outO = interpolate(t, [13.05, 13.4], [0, 1], clamp);
+  const outO = 0;
   return <AbsoluteFill style={{ backgroundColor: "black", opacity: Math.max(inO, outO) }} />;
 };
 
@@ -651,5 +653,6 @@ export const AngryEdit: React.FC = () => (
     <Summary />
     <SoundFx />
     <Fade />
+    <FollowOutro start={OUTRO} />
   </AbsoluteFill>
 );
