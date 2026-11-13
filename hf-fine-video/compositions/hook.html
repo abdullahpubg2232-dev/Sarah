@@ -1,0 +1,168 @@
+<template>
+  <style>
+    @font-face {
+      font-family: "Cairo";
+      src: url("assets/fonts/cairo-900.woff2") format("woff2");
+      font-weight: 900;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    /* Salam */
+    #hk-salam {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 2010px;
+      text-align: center;
+    }
+    #hk-salam-ar {
+      display: inline-block;
+      font-family: "Cairo", sans-serif;
+      font-weight: 900;
+      font-size: 300px;
+      line-height: 1.3;
+      padding: 0 40px;
+      background: linear-gradient(100deg, #fff6e0 0%, #ffd23f 35%, #ff9f43 65%, #ff3d7f 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.45));
+    }
+    #hk-salam-en {
+      margin-top: 10px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 90px;
+      line-height: 1;
+      letter-spacing: 30px;
+      color: #ffffff;
+      text-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    }
+    .hk-spark {
+      position: absolute;
+      width: 16px;
+      height: 70px;
+      border-radius: 8px;
+      left: 1072px;
+      top: -10px;
+      background: #ffd23f;
+      opacity: 0;
+    }
+    /* Title */
+    #hk-title {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 1980px;
+      text-align: center;
+    }
+    #hk-kicker {
+      display: inline-block;
+      padding: 24px 64px;
+      border-radius: 999px;
+      background: rgba(15, 16, 22, 0.72);
+      border: 3px solid rgba(255, 255, 255, 0.16);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 80px;
+      line-height: 1;
+      letter-spacing: 12px;
+      color: #ffffff;
+    }
+    #hk-kicker b {
+      color: #ffd23f;
+    }
+    #hk-fine-wrap {
+      position: relative;
+      display: inline-block;
+      margin-top: 30px;
+    }
+    #hk-fine {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 330px;
+      line-height: 1;
+      letter-spacing: -6px;
+      color: #ffffff;
+      text-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+      white-space: nowrap;
+    }
+    #hk-strike {
+      position: absolute;
+      left: -40px;
+      right: -40px;
+      top: 150px;
+      height: 44px;
+      border-radius: 22px;
+      background: linear-gradient(90deg, #ff3d7f, #ff2d2d);
+      box-shadow: 0 10px 30px rgba(255, 45, 80, 0.5);
+      transform-origin: 0 50%;
+    }
+    #hk-instead {
+      margin-top: 40px;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 120px;
+      line-height: 1.1;
+      color: #ffd23f;
+      text-shadow: 0 10px 34px rgba(0, 0, 0, 0.6);
+    }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="2160" data-height="3840">
+    <div id="hk-salam" class="clip" data-start="0.12" data-duration="1.2" data-track-index="0">
+      <div id="hk-salam-ar" dir="rtl">سلام</div>
+      <div id="hk-salam-en">SALAM</div>
+      <div id="hk-sparks" data-layout-ignore>
+        <div class="hk-spark" id="hk-sp-0"></div>
+        <div class="hk-spark" id="hk-sp-1"></div>
+        <div class="hk-spark" id="hk-sp-2"></div>
+        <div class="hk-spark" id="hk-sp-3"></div>
+        <div class="hk-spark" id="hk-sp-4"></div>
+        <div class="hk-spark" id="hk-sp-5"></div>
+        <div class="hk-spark" id="hk-sp-6"></div>
+        <div class="hk-spark" id="hk-sp-7"></div>
+      </div>
+    </div>
+    <div id="hk-title" class="clip" data-start="1.3" data-duration="3.05" data-track-index="1">
+      <div><span id="hk-kicker"><b>3</b> WAYS TO SAY</span></div>
+      <div id="hk-fine-wrap" data-layout-allow-overlap>
+        <div id="hk-fine">I'M FINE</div>
+        <div id="hk-strike" data-layout-allow-occlusion></div>
+      </div>
+      <div id="hk-instead">try these ↓</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+
+    // Salam: rises in with a gradient shimmer and a spark burst.
+    tl.fromTo("#hk-salam-ar", { opacity: 0, y: 120, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 0.12);
+    tl.fromTo("#hk-salam-ar", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.1, ease: "none" }, 0.12);
+    tl.fromTo("#hk-salam-en", { opacity: 0, scaleX: 1.6 }, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power3.out" }, 0.35);
+    for (let k = 0; k < 8; k++) {
+      const a = (k / 8) * Math.PI * 2 - Math.PI / 2;
+      tl.set(`#hk-sp-${k}`, { rotation: (a * 180) / Math.PI + 90 }, 0);
+      tl.fromTo(
+        `#hk-sp-${k}`,
+        { x: Math.cos(a) * 360, y: Math.sin(a) * 220 + 200, opacity: 1, scaleY: 1 },
+        { x: Math.cos(a) * 620, y: Math.sin(a) * 380 + 200, opacity: 0, scaleY: 0.2, duration: 0.5, ease: "power3.out" },
+        0.4,
+      );
+    }
+    tl.to("#hk-salam", { opacity: 0, y: -80, scale: 0.9, duration: 0.18, ease: "power2.in" }, 1.12);
+
+    // Title: kicker, then I'M FINE slams; struck through on "without I'm fine".
+    tl.fromTo("#hk-kicker", { opacity: 0, y: -60, scale: 0.8 }, { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2)" }, 1.32);
+    tl.fromTo("#hk-fine", { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.24, ease: "power4.in" }, 2.1);
+    tl.fromTo("#hk-strike", { scaleX: 0 }, { scaleX: 1, duration: 0.22, ease: "power3.out" }, 3.3);
+    tl.to("#hk-fine", { opacity: 0.55, duration: 0.2, ease: "none" }, 3.4);
+    tl.fromTo("#hk-instead", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, 3.42);
+    tl.to("#hk-title", { opacity: 0, scale: 0.85, y: -100, duration: 0.16, ease: "power2.in" }, 4.24);
+
+    window.__timelines["hook"] = tl;
+  </script>
+</template>

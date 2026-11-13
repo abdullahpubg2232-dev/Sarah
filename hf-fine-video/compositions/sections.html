@@ -1,0 +1,131 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .sc {
+      position: absolute;
+      inset: 0;
+    }
+    .sc-num {
+      position: absolute;
+      left: 180px;
+      top: 400px;
+      width: 520px;
+      height: 360px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 360px;
+      line-height: 1;
+      letter-spacing: -14px;
+    }
+    .sc-num span {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    .sc-num-o {
+      color: transparent;
+      -webkit-text-stroke: 6px rgba(255, 255, 255, 0.85);
+      transform: translate(22px, 22px);
+    }
+    .sc-num-f {
+      background: linear-gradient(160deg, #fff1c9 0%, #ffd23f 30%, #ff9f43 60%, #ff3d7f 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.5));
+    }
+    .sc-card {
+      position: absolute;
+      left: 720px;
+      top: 440px;
+      width: 1160px;
+      height: 300px;
+      border-radius: 60px;
+      background: rgba(15, 16, 22, 0.72);
+      border: 3px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45), inset 10px 0 0 var(--accent);
+    }
+    .sc-ic {
+      position: absolute;
+      left: 50px;
+      top: 50px;
+    }
+    .sc-txt {
+      position: absolute;
+      left: 290px;
+      top: 62px;
+      white-space: nowrap;
+    }
+    .sc-lab {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 58px;
+      line-height: 1.2;
+      letter-spacing: 6px;
+      color: #ffd23f;
+    }
+    .sc-mean {
+      margin-top: 14px;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 800;
+      font-size: 78px;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+  </style>
+  <div id="root" data-composition-id="sections" data-width="2160" data-height="3840">
+    <div id="sc0" class="clip sc" data-start="0.1" data-duration="3.7" data-track-index="0">
+      <div id="sc0-num" class="sc-num" data-layout-allow-overlap><span class="sc-num-o">01</span><span class="sc-num-f" data-layout-allow-occlusion>01</span></div>
+      <div id="sc0-card" class="sc-card" style="--accent: #2ecc71">
+        <svg id="sc0-ic" class="sc-ic" viewBox="-50 -50 100 100" width="200" height="200"><circle r="46" fill="#2ecc71"/><circle cx="-15" cy="-8" r="6" fill="#0b0b0b"/><circle cx="15" cy="-8" r="6" fill="#0b0b0b"/><path d="M -22 12 Q 0 34 22 12" stroke="#0b0b0b" stroke-width="7" stroke-linecap="round" fill="none"/></svg>
+        <div class="sc-txt">
+          <div class="sc-lab">WAY 1 · POSITIVE</div>
+          <div class="sc-mean">life is going well</div>
+        </div>
+      </div>
+    </div>
+    <div id="sc1" class="clip sc" data-start="3.85" data-duration="3.25" data-track-index="1">
+      <div id="sc1-num" class="sc-num" data-layout-allow-overlap><span class="sc-num-o">02</span><span class="sc-num-f" data-layout-allow-occlusion>02</span></div>
+      <div id="sc1-card" class="sc-card" style="--accent: #4da3ff">
+        <svg id="sc1-ic" class="sc-ic" viewBox="-50 -50 100 100" width="200" height="200"><circle r="46" fill="#4da3ff"/><rect x="-34" y="-18" width="30" height="20" rx="8" fill="#0b0b0b"/><rect x="4" y="-18" width="30" height="20" rx="8" fill="#0b0b0b"/><line x1="-4" y1="-12" x2="4" y2="-12" stroke="#0b0b0b" stroke-width="5"/><path d="M -16 20 Q 4 32 20 16" stroke="#0b0b0b" stroke-width="7" stroke-linecap="round" fill="none"/></svg>
+        <div class="sc-txt">
+          <div class="sc-lab">WAY 2 · RELAXED</div>
+          <div class="sc-mean">taking it easy</div>
+        </div>
+      </div>
+    </div>
+    <div id="sc2" class="clip sc" data-start="7.15" data-duration="3.4" data-track-index="2">
+      <div id="sc2-num" class="sc-num" data-layout-allow-overlap><span class="sc-num-o">03</span><span class="sc-num-f" data-layout-allow-occlusion>03</span></div>
+      <div id="sc2-card" class="sc-card" style="--accent: #ffb52e">
+        <svg id="sc2-ic" class="sc-ic" viewBox="-50 -50 100 100" width="200" height="200"><circle r="46" fill="#ffb52e"/><circle cx="-15" cy="-6" r="6" fill="#0b0b0b"/><circle cx="15" cy="-6" r="6" fill="#0b0b0b"/><line x1="-26" y1="-22" x2="-6" y2="-18" stroke="#0b0b0b" stroke-width="6" stroke-linecap="round"/><path d="M -18 24 Q 0 16 18 24" stroke="#0b0b0b" stroke-width="7" stroke-linecap="round" fill="none"/></svg>
+        <div class="sc-txt">
+          <div class="sc-lab">WAY 3 · HONEST</div>
+          <div class="sc-mean">not my best day</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#sc0-num", { opacity: 0, x: -520, skewX: -18, scaleX: 1.5 }, { opacity: 1, x: 0, skewX: 0, scaleX: 1, duration: 0.42, ease: "expo.out" }, 0.1);
+    tl.fromTo("#sc0-card", { opacity: 0, x: 900, rotationY: -35, transformPerspective: 1600 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.5, ease: "back.out(1.4)" }, 0.220);
+    tl.fromTo("#sc0-ic", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2.6)" }, 0.500);
+    tl.to("#sc0-ic", { scale: 1.12, duration: 0.18, ease: "sine.inOut", yoyo: true, repeat: 3 }, 1.300);
+    tl.to(["#sc0-num", "#sc0-card"], { opacity: 0, x: -200, duration: 0.18, ease: "power2.in" }, 3.600);
+    tl.fromTo("#sc1-num", { opacity: 0, x: -520, skewX: -18, scaleX: 1.5 }, { opacity: 1, x: 0, skewX: 0, scaleX: 1, duration: 0.42, ease: "expo.out" }, 3.85);
+    tl.fromTo("#sc1-card", { opacity: 0, x: 900, rotationY: -35, transformPerspective: 1600 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.5, ease: "back.out(1.4)" }, 3.970);
+    tl.fromTo("#sc1-ic", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2.6)" }, 4.250);
+    tl.to("#sc1-ic", { scale: 1.12, duration: 0.18, ease: "sine.inOut", yoyo: true, repeat: 3 }, 5.050);
+    tl.to(["#sc1-num", "#sc1-card"], { opacity: 0, x: -200, duration: 0.18, ease: "power2.in" }, 6.900);
+    tl.fromTo("#sc2-num", { opacity: 0, x: -520, skewX: -18, scaleX: 1.5 }, { opacity: 1, x: 0, skewX: 0, scaleX: 1, duration: 0.42, ease: "expo.out" }, 7.15);
+    tl.fromTo("#sc2-card", { opacity: 0, x: 900, rotationY: -35, transformPerspective: 1600 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.5, ease: "back.out(1.4)" }, 7.270);
+    tl.fromTo("#sc2-ic", { scale: 0, rotation: -90 }, { scale: 1, rotation: 0, duration: 0.4, ease: "back.out(2.6)" }, 7.550);
+    tl.to("#sc2-ic", { scale: 1.12, duration: 0.18, ease: "sine.inOut", yoyo: true, repeat: 3 }, 8.350);
+    tl.to(["#sc2-num", "#sc2-card"], { opacity: 0, x: -200, duration: 0.18, ease: "power2.in" }, 10.350);
+    window.__timelines["sections"] = tl;
+  </script>
+</template>

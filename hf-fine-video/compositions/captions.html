@@ -1,0 +1,181 @@
+<template>
+  <style>
+    #root {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .cg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 2060px;
+      height: 600px;
+      text-align: center;
+      overflow: visible;
+    }
+    .cg-in {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+    .cg-line1 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 900;
+      font-size: 170px;
+      line-height: 1.1;
+      color: #ffffff;
+      text-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
+    }
+    .cg-lead {
+      display: inline-block;
+    }
+    .cg-line2 {
+      position: relative;
+      display: inline-block;
+      margin-top: -10px;
+    }
+    .cg-key {
+      display: inline-block;
+      padding: 0 40px 30px;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 330px;
+      line-height: 1.05;
+      white-space: nowrap;
+      background: linear-gradient(100deg, #fff1c9 0%, #ffd23f 25%, #ff9f43 50%, #ff3d7f 75%, #ffd23f 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.55));
+    }
+    .cg-swoosh {
+      position: absolute;
+      left: 50%;
+      margin-left: -500px;
+      bottom: -40px;
+    }
+    .cg-star {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -36px;
+      margin-top: -36px;
+      width: 72px;
+      height: 72px;
+      background: #ffd23f;
+      clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%);
+      opacity: 0;
+    }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="2160" data-height="3840">
+    <svg width="0" height="0" style="position: absolute">
+      <defs>
+        <linearGradient id="cgGrad" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0%" stop-color="#ffd23f" />
+          <stop offset="55%" stop-color="#ff9f43" />
+          <stop offset="100%" stop-color="#ff3d7f" />
+        </linearGradient>
+      </defs>
+    </svg>
+    <div id="cg0" class="clip cg" data-start="4.6" data-duration="0.95" data-track-index="0">
+      <div id="cg0-in" class="cg-in" data-layout-allow-overlap>
+        <div class="cg-line1"><span id="cg0-w0" class="cg-lead">I'm</span> <span id="cg0-w1" class="cg-lead">doing</span> </div>
+        <div class="cg-line2"><span id="cg0-k" class="cg-key">good</span></div>
+      </div>
+    </div>
+    <div id="cg1" class="clip cg" data-start="6.8" data-duration="0.95" data-track-index="1">
+      <div id="cg1-in" class="cg-in" data-layout-allow-overlap>
+        <div class="cg-line1"><span id="cg1-w0" class="cg-lead">I'm</span> <span id="cg1-w1" class="cg-lead">doing</span> </div>
+        <div class="cg-line2"><span id="cg1-k" class="cg-key">good</span><svg id="cg1-swoosh" class="cg-swoosh" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="cg1-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#cgGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="cg1-st0" class="cg-star" data-layout-ignore></div><div id="cg1-st1" class="cg-star" data-layout-ignore></div><div id="cg1-st2" class="cg-star" data-layout-ignore></div><div id="cg1-st3" class="cg-star" data-layout-ignore></div></div>
+      </div>
+    </div>
+    <div id="cg2" class="clip cg" data-start="8.4" data-duration="0.85" data-track-index="2">
+      <div id="cg2-in" class="cg-in" data-layout-allow-overlap>
+        <div class="cg-line1"><span id="cg2-w0" class="cg-lead">I'm</span> </div>
+        <div class="cg-line2"><span id="cg2-k" class="cg-key">chilling</span></div>
+      </div>
+    </div>
+    <div id="cg3" class="clip cg" data-start="10.3" data-duration="0.9" data-track-index="0">
+      <div id="cg3-in" class="cg-in" data-layout-allow-overlap>
+        <div class="cg-line1"><span id="cg3-w0" class="cg-lead">I'm</span> </div>
+        <div class="cg-line2"><span id="cg3-k" class="cg-key">chilling</span><svg id="cg3-swoosh" class="cg-swoosh" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="cg3-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#cgGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="cg3-st0" class="cg-star" data-layout-ignore></div><div id="cg3-st1" class="cg-star" data-layout-ignore></div><div id="cg3-st2" class="cg-star" data-layout-ignore></div><div id="cg3-st3" class="cg-star" data-layout-ignore></div></div>
+      </div>
+    </div>
+    <div id="cg4" class="clip cg" data-start="12.45" data-duration="1.17" data-track-index="1">
+      <div id="cg4-in" class="cg-in" data-layout-allow-overlap>
+        <div class="cg-line1"><span id="cg4-w0" class="cg-lead">I've</span> <span id="cg4-w1" class="cg-lead">been</span> </div>
+        <div class="cg-line2"><span id="cg4-k" class="cg-key">better</span></div>
+      </div>
+    </div>
+    <div id="cg5" class="clip cg" data-start="14.05" data-duration="0.9" data-track-index="2">
+      <div id="cg5-in" class="cg-in" data-layout-allow-overlap>
+        <div class="cg-line1"><span id="cg5-w0" class="cg-lead">I've</span> <span id="cg5-w1" class="cg-lead">been</span> </div>
+        <div class="cg-line2"><span id="cg5-k" class="cg-key">better</span><svg id="cg5-swoosh" class="cg-swoosh" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="cg5-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#cgGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="cg5-st0" class="cg-star" data-layout-ignore></div><div id="cg5-st1" class="cg-star" data-layout-ignore></div><div id="cg5-st2" class="cg-star" data-layout-ignore></div><div id="cg5-st3" class="cg-star" data-layout-ignore></div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#cg0-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.28, ease: "back.out(1.8)" }, 4.6);
+    tl.fromTo("#cg0-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.28, ease: "back.out(1.8)" }, 4.78);
+    tl.fromTo("#cg0-k", { opacity: 0, scale: 0.55, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.34, ease: "back.out(2.2)" }, 4.94);
+    tl.fromTo("#cg0-k", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.61, ease: "none" }, 4.94);
+    tl.to("#cg0-in", { opacity: 0, y: -50, scale: 0.94, duration: 0.12, ease: "power2.in" }, 5.42);
+    tl.fromTo("#cg1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.28, ease: "back.out(1.8)" }, 6.8);
+    tl.fromTo("#cg1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.28, ease: "back.out(1.8)" }, 7.02);
+    tl.fromTo("#cg1-k", { opacity: 0, scale: 0.55, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.34, ease: "back.out(2.2)" }, 7.24);
+    tl.fromTo("#cg1-k", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.51, ease: "none" }, 7.24);
+    tl.to("#cg1-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 7.36);
+    tl.fromTo("#cg1-st0", { opacity: 0, scale: 0, rotation: 0, x: -460, y: -150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 7.39);
+    tl.to("#cg1-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 7.69);
+    tl.fromTo("#cg1-st1", { opacity: 0, scale: 0, rotation: 0, x: 470, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 7.44);
+    tl.to("#cg1-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 7.74);
+    tl.fromTo("#cg1-st2", { opacity: 0, scale: 0, rotation: 0, x: -380, y: 140 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 7.49);
+    tl.to("#cg1-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 7.79);
+    tl.fromTo("#cg1-st3", { opacity: 0, scale: 0, rotation: 0, x: 420, y: 120 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 7.54);
+    tl.to("#cg1-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 7.84);
+    tl.to("#cg1-in", { opacity: 0, y: -50, scale: 0.94, duration: 0.12, ease: "power2.in" }, 7.62);
+    tl.fromTo("#cg2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.28, ease: "back.out(1.8)" }, 8.4);
+    tl.fromTo("#cg2-k", { opacity: 0, scale: 0.55, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.34, ease: "back.out(2.2)" }, 8.68);
+    tl.fromTo("#cg2-k", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.57, ease: "none" }, 8.68);
+    tl.to("#cg2-in", { opacity: 0, y: -50, scale: 0.94, duration: 0.12, ease: "power2.in" }, 9.12);
+    tl.fromTo("#cg3-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.28, ease: "back.out(1.8)" }, 10.3);
+    tl.fromTo("#cg3-k", { opacity: 0, scale: 0.55, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.34, ease: "back.out(2.2)" }, 10.6);
+    tl.fromTo("#cg3-k", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.6, ease: "none" }, 10.6);
+    tl.to("#cg3-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 10.72);
+    tl.fromTo("#cg3-st0", { opacity: 0, scale: 0, rotation: 0, x: -460, y: -150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 10.75);
+    tl.to("#cg3-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 11.05);
+    tl.fromTo("#cg3-st1", { opacity: 0, scale: 0, rotation: 0, x: 470, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 10.80);
+    tl.to("#cg3-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 11.10);
+    tl.fromTo("#cg3-st2", { opacity: 0, scale: 0, rotation: 0, x: -380, y: 140 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 10.85);
+    tl.to("#cg3-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 11.15);
+    tl.fromTo("#cg3-st3", { opacity: 0, scale: 0, rotation: 0, x: 420, y: 120 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 10.90);
+    tl.to("#cg3-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 11.20);
+    tl.to("#cg3-in", { opacity: 0, y: -50, scale: 0.94, duration: 0.12, ease: "power2.in" }, 11.07);
+    tl.fromTo("#cg4-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.28, ease: "back.out(1.8)" }, 12.45);
+    tl.fromTo("#cg4-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.28, ease: "back.out(1.8)" }, 12.98);
+    tl.fromTo("#cg4-k", { opacity: 0, scale: 0.55, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.34, ease: "back.out(2.2)" }, 13.14);
+    tl.fromTo("#cg4-k", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.48, ease: "none" }, 13.14);
+    tl.to("#cg4-in", { opacity: 0, y: -50, scale: 0.94, duration: 0.12, ease: "power2.in" }, 13.49);
+    tl.fromTo("#cg5-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.28, ease: "back.out(1.8)" }, 14.05);
+    tl.fromTo("#cg5-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.28, ease: "back.out(1.8)" }, 14.3);
+    tl.fromTo("#cg5-k", { opacity: 0, scale: 0.55, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.34, ease: "back.out(2.2)" }, 14.44);
+    tl.fromTo("#cg5-k", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.51, ease: "none" }, 14.44);
+    tl.to("#cg5-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 14.56);
+    tl.fromTo("#cg5-st0", { opacity: 0, scale: 0, rotation: 0, x: -460, y: -150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 14.59);
+    tl.to("#cg5-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 14.89);
+    tl.fromTo("#cg5-st1", { opacity: 0, scale: 0, rotation: 0, x: 470, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 14.64);
+    tl.to("#cg5-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 14.94);
+    tl.fromTo("#cg5-st2", { opacity: 0, scale: 0, rotation: 0, x: -380, y: 140 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 14.69);
+    tl.to("#cg5-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 14.99);
+    tl.fromTo("#cg5-st3", { opacity: 0, scale: 0, rotation: 0, x: 420, y: 120 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 14.74);
+    tl.to("#cg5-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 15.04);
+    tl.to("#cg5-in", { opacity: 0, y: -50, scale: 0.94, duration: 0.12, ease: "power2.in" }, 14.82);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>
