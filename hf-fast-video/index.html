@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait-4k">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=2160, height=3840" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 2160px; height: 3840px; overflow: hidden; background: #07090f; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+      #cam, #punch { position: absolute; inset: 0; transform-origin: 50% 30%; }
+      #cam { z-index: 1; }
+      #footage, .rp { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; object-fit: cover; }
+      #replay-shade { position: absolute; inset: 0; z-index: 2; box-shadow: inset 0 0 0 26px #ff3d7f; }
+      #shade {
+        position: absolute; inset: 0; z-index: 2;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 45%, rgba(0,0,0,0.45) 70%, rgba(0,0,0,0.6) 100%),
+          radial-gradient(ellipse 75% 60% at 50% 38%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.35) 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="75.98" data-width="2160" data-height="3840">
+      <div id="cam">
+        <div id="punch">
+          <video id="footage" class="clip" src="assets/footage.mp4" data-start="0" data-duration="66.08" data-track-index="0" data-has-audio="true" data-volume="1" playsinline></video>
+      <video id="rp0" class="clip rp" src="assets/footage.mp4" data-start="66.08" data-duration="2.15" data-media-start="15.8" data-track-index="2" data-has-audio="true" data-volume="1" playsinline></video>
+      <video id="rp1" class="clip rp" src="assets/footage.mp4" data-start="68.28" data-duration="2.2" data-media-start="22.75" data-track-index="3" data-has-audio="true" data-volume="1" playsinline></video>
+      <video id="rp2" class="clip rp" src="assets/footage.mp4" data-start="70.53" data-duration="1.3" data-media-start="31.6" data-track-index="2" data-has-audio="true" data-volume="1" playsinline></video>
+        </div>
+      </div>
+      <div id="shade" class="clip" data-start="0" data-duration="72.18" data-track-index="1"></div>
+      <div id="replay-shade" class="clip" data-start="66.08" data-duration="6.1" data-track-index="4"></div>
+      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="72.18" data-track-index="5" data-track-kind="captions" data-width="2160" data-height="3840" style="z-index: 7"></div>
+      <div id="follow" data-composition-id="follow" data-composition-src="compositions/follow.html" data-start="72.18" data-duration="3.8" data-track-index="6" data-track-kind="graphics" data-width="2160" data-height="3840" style="z-index: 11"></div>
+      <!-- Music bed at 20% (Mixkit #1168 "Coffee or Tea", Mixkit Stock Music Free License) -->
+      <audio id="music" class="clip" src="assets/music.mp3" data-start="0" data-duration="75.98" data-track-index="9" data-volume="0.2"></audio>
+      <!-- Sound effects (CC0) -->
+      <audio id="sfx-f1" class="clip" src="assets/sfx/pop.ogg" data-start="5.03" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-w" class="clip" src="assets/sfx/pop.ogg" data-start="12.13" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-p1" class="clip" src="assets/sfx/pop.ogg" data-start="15.78" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-p1b" class="clip" src="assets/sfx/pop2.ogg" data-start="18.23" data-duration="0.08" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-p2" class="clip" src="assets/sfx/pop.ogg" data-start="22.73" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-p2b" class="clip" src="assets/sfx/pop2.ogg" data-start="25.13" data-duration="0.08" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-p3" class="clip" src="assets/sfx/pop.ogg" data-start="31.58" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-p3b" class="clip" src="assets/sfx/pop2.ogg" data-start="33.08" data-duration="0.08" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-p3c" class="clip" src="assets/sfx/pop.ogg" data-start="34.16" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-f2" class="clip" src="assets/sfx/pop.ogg" data-start="41.58" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-f3" class="clip" src="assets/sfx/pop.ogg" data-start="50.83" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-r0p1" class="clip" src="assets/sfx/pop.ogg" data-start="66.06" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-r1p2" class="clip" src="assets/sfx/pop.ogg" data-start="68.26" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-r2p3" class="clip" src="assets/sfx/pop.ogg" data-start="70.51" data-duration="0.12" data-track-index="10" data-volume="0.55"></audio>
+      <audio id="sfx-replay" class="clip" src="assets/sfx/whoosh.ogg" data-start="66.08" data-duration="0.28" data-track-index="11" data-volume="0.35"></audio>
+      <audio id="sfx-fo-whoosh" class="clip" src="assets/sfx/whoosh.ogg" data-start="72.2" data-duration="0.28" data-track-index="10" data-volume="0.35"></audio>
+      <audio id="sfx-fo-pop" class="clip" src="assets/sfx/pop.ogg" data-start="72.3" data-duration="0.12" data-track-index="11" data-volume="0.5"></audio>
+      <audio id="sfx-fo-avatar" class="clip" src="assets/sfx/pop2.ogg" data-start="72.66" data-duration="0.08" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-fo-click" class="clip" src="assets/sfx/click.ogg" data-start="74.03" data-duration="0.1" data-track-index="10" data-volume="0.8"></audio>
+      <audio id="sfx-fo-ding" class="clip" src="assets/sfx/ding.ogg" data-start="74.09" data-duration="0.69" data-track-index="11" data-volume="0.5"></audio>
+      <audio id="sfx-fo-toast" class="clip" src="assets/sfx/pop.ogg" data-start="74.23" data-duration="0.12" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-fo-exit" class="clip" src="assets/sfx/whoosh.ogg" data-start="75.43" data-duration="0.28" data-track-index="10" data-volume="0.35"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#cam", { scale: 1.02 }, { scale: 1.08, duration: 66.08, ease: "none" }, 0);
+      tl.to("#cam", { scale: 1.04, duration: 0.3, ease: "power2.out" }, 66.08);
+      tl.set("#punch", { scale: 1 }, 0);
+      [
+        [12.3, 1.045],
+        [15.95, 1.045],
+        [22.9, 1.045],
+        [31.75, 1.045],
+        [34.33, 1.045]
+      ].forEach(([t, s]) => {
+        tl.to("#punch", { scale: s, duration: 0.2, ease: "back.out(2)" }, t);
+        tl.to("#punch", { scale: 1, duration: 0.7, ease: "power2.inOut" }, t + 1.2);
+      });
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
