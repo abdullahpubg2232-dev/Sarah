@@ -262,5 +262,31 @@
    36.8,
    37.85
   ]
+ ],
+ "sections": [
+  {
+   "num": "01",
+   "start": 9.0,
+   "end": 17.45,
+   "label": "LIGHTS",
+   "meaning": "turn on / turn off",
+   "color": "#ffd23f"
+  },
+  {
+   "num": "02",
+   "start": 23.6,
+   "end": 32.35,
+   "label": "YOUR PHONE",
+   "meaning": "same verb: turn on / off",
+   "color": "#4da3ff"
+  },
+  {
+   "num": "03",
+   "start": 36.75,
+   "end": 38.6,
+   "label": "DOORS",
+   "meaning": "you open a door",
+   "color": "#2ecc71"
+  }
  ]
 }

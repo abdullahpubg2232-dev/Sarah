@@ -180,5 +180,39 @@
    31.1,
    34.7
   ]
+ ],
+ "sections": [
+  {
+   "num": "01",
+   "start": 11.3,
+   "end": 15.3,
+   "label": "WAY 1 \u00b7 IN A SHOP",
+   "meaning": "only browsing, thanks",
+   "color": "#2ecc71"
+  },
+  {
+   "num": "02",
+   "start": 18.5,
+   "end": 20.7,
+   "label": "WAY 2 \u00b7 SIMPLE",
+   "meaning": "a short, polite no",
+   "color": "#4da3ff"
+  },
+  {
+   "num": "03",
+   "start": 23.4,
+   "end": 26.1,
+   "label": "WAY 3 \u00b7 SOFT",
+   "meaning": "not right now",
+   "color": "#ffb52e"
+  },
+  {
+   "num": "04",
+   "start": 31.0,
+   "end": 34.9,
+   "label": "WAY 4 \u00b7 EXTRA POLITE",
+   "meaning": "kind, but still no",
+   "color": "#ff3d7f"
+  }
  ]
 }

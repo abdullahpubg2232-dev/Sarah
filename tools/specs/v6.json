@@ -444,5 +444,31 @@
    31.6,
    32.9
   ]
+ ],
+ "sections": [
+  {
+   "num": "01",
+   "start": 15.6,
+   "end": 20.4,
+   "label": "WAY 1 \u00b7 POLITE",
+   "meaning": "say it one more time",
+   "color": "#2ecc71"
+  },
+  {
+   "num": "02",
+   "start": 22.6,
+   "end": 27.6,
+   "label": "WAY 2 \u00b7 POLITE",
+   "meaning": "talk a bit slower",
+   "color": "#4da3ff"
+  },
+  {
+   "num": "03",
+   "start": 31.4,
+   "end": 35.3,
+   "label": "WAY 3 \u00b7 CASUAL",
+   "meaning": "I missed what you said",
+   "color": "#ffb52e"
+  }
  ]
 }
