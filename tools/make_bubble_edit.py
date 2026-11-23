@@ -294,6 +294,8 @@ rvid = "\n".join(
 punches = ",\n        ".join(f"[{g['words'][0][1]}, 1.045]" for g in groups if g["kind"] == "sent")
 sec_host = ""
 streak_js = ""
+wm = spec.get("watermark")
+wm_html = (f'      <div id="watermark" class="clip" data-start="0" data-duration="{round(REND,3)}" data-track-index="3">{wm}</div>' if wm else "")
 if sections:
     last = max(s["end"] for s in sections)
     sec_host = (f'      <div id="sections" data-composition-id="sections" data-composition-src="compositions/sections.html" data-start="0" data-duration="{round(last + 0.1,3)}" data-track-index="7" data-track-kind="graphics" data-width="2160" data-height="3840" style="z-index: 6"></div>\n'
@@ -316,6 +318,11 @@ idx = f'''<!doctype html>
         position: absolute; left: -1600px; top: -600px; width: 1100px; height: 5040px; z-index: 9; opacity: 0; mix-blend-mode: screen;
         background: linear-gradient(90deg, rgba(255,210,63,0) 0%, rgba(255,159,67,0.55) 35%, rgba(255,255,255,0.85) 50%, rgba(255,61,127,0.55) 65%, rgba(255,61,127,0) 100%);
       }}
+      #watermark {{
+        position: absolute; left: 0; right: 0; top: 900px; z-index: 6; text-align: center;
+        font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 66px; letter-spacing: 3px; line-height: 1.2;
+        color: rgba(255, 255, 255, 0.42); text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+      }}
       #replay-shade {{ position: absolute; inset: 0; z-index: 2; box-shadow: inset 0 0 0 26px #ff3d7f; }}
       #shade {{
         position: absolute; inset: 0; z-index: 2;
@@ -335,6 +342,7 @@ idx = f'''<!doctype html>
       <div id="shade" class="clip" data-start="0" data-duration="{round(REND,3)}" data-track-index="1"></div>
       <div id="replay-shade" class="clip" data-start="{R0}" data-duration="{round(REND-R0,3)}" data-track-index="4"></div>
 {sec_host}
+{wm_html}
       <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="{round(REND,3)}" data-track-index="5" data-track-kind="captions" data-width="2160" data-height="3840" style="z-index: 7"></div>
       <div id="follow" data-composition-id="follow" data-composition-src="compositions/follow.html" data-start="{round(FOLLOW,3)}" data-duration="3.8" data-track-index="6" data-track-kind="graphics" data-width="2160" data-height="3840" style="z-index: 11"></div>
       <!-- Music bed at 20% (Mixkit #1168 "Coffee or Tea", Mixkit Stock Music Free License) -->
