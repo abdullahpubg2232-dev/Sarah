@@ -260,7 +260,8 @@ cap = f'''<template>
     .gk {{
       display: inline-block; padding: 0 24px 20px; font-family: "Playfair Display", serif; font-style: italic; font-weight: 900; font-size: 250px; line-height: 1.05;
       background: linear-gradient(100deg, #fff1c9 0%, #ffd23f 25%, #ff9f43 50%, #ff3d7f 75%, #ffd23f 100%); background-size: 200% 100%;
-      -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.55));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 22px rgba(0, 0, 0, 0.8)) drop-shadow(0 14px 30px rgba(0, 0, 0, 0.6));
     }}
     .gsw {{ position: absolute; left: 50%; margin-left: -500px; bottom: -70px; }}
     .gstar {{ position: absolute; left: 50%; top: 50%; margin-left: -36px; margin-top: -36px; width: 72px; height: 72px; background: #ffd23f; clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); opacity: 0; }}
