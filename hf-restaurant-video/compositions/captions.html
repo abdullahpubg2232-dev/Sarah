@@ -1,0 +1,362 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .cap { position: absolute; left: 0; right: 0; top: 0; height: 3840px; overflow: visible; }
+    .cap-in { position: absolute; left: 160px; right: 160px; top: 2080px; text-align: center; }
+    .cline { position: relative; display: inline; font-family: "Poppins", sans-serif; font-weight: 900; font-size: 150px; line-height: 1.34; }
+    .cap-in.fast { top: 1900px; }
+    .cap-in.fast .cline { font-size: 104px; font-weight: 800; line-height: 1.3; }
+    .cw { position: relative; display: inline-block; margin: 0 6px; }
+    .pill { position: absolute; left: -24px; right: -24px; top: 14px; bottom: 6px; border-radius: 34px; background: #ffd23f; }
+    .pill.key { background: linear-gradient(135deg, #ffe066, #ff9f1c); }
+    .ct { position: relative; color: #ffffff; text-shadow: 0 8px 34px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5); }
+    .cstrike { position: absolute; left: -30px; right: -30px; top: 50%; height: 30px; margin-top: -15px; border-radius: 15px; background: #ff3b30; transform-origin: 0 50%; }
+    .clab { position: absolute; left: 0; right: 0; top: 1540px; width: fit-content; margin: 0 auto; padding: 18px 50px; border-radius: 999px; background: #e0241b; text-align: center; font-family: "Poppins", sans-serif; font-weight: 800; font-size: 76px; letter-spacing: 6px; line-height: 1.2; color: #ffffff; }
+    .big-in { position: absolute; left: 0; right: 0; top: 0; height: 3840px; }
+    .bigw { position: absolute; left: 0; right: 0; top: 2000px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 900; line-height: 1; letter-spacing: -4px; opacity: 0; }
+    .bigw span { color: #ffffff; text-shadow: 0 14px 50px rgba(0, 0, 0, 0.6), 0 3px 6px rgba(0, 0, 0, 0.45); }
+    .bigw.key span { background: linear-gradient(180deg, #fff1a8 0%, #ffd23f 45%, #ff8a00 100%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; filter: drop-shadow(0 14px 40px rgba(0, 0, 0, 0.55)); }
+    .kara-row { position: absolute; left: 0; right: 0; top: 2440px; text-align: center; }
+    .kara { display: inline-block; max-width: 1840px; padding: 26px 56px; border-radius: 60px; background: rgba(11, 11, 11, 0.6); font-family: "Poppins", sans-serif; font-weight: 800; font-size: 84px; line-height: 1.3; }
+    .kw { display: inline-block; color: rgba(255, 255, 255, 0.45); }
+    #replay-tag { position: absolute; left: 0; right: 0; top: 0; height: 3840px; }
+    #replay-in {
+      position: absolute; left: 0; right: 0; top: 520px; margin: 0 auto; width: 1500px; padding: 34px 0; border-radius: 999px; text-align: center;
+      background: linear-gradient(100deg, #d81b60, #e8590c); font-family: "Poppins", sans-serif; font-weight: 900; font-size: 92px; line-height: 1; color: #fff;
+      box-shadow: 0 30px 80px rgba(255, 61, 127, 0.45);
+    }
+    #replay-ic { display: inline-block; }
+    .g-in { position: absolute; left: 140px; right: 140px; top: 1720px; text-align: center; }
+    .gline { font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 150px; line-height: 1.25; color: #ffffff; }
+    .gl { display: inline-block; text-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); }
+    .gk {
+      display: inline-block; padding: 0 24px 20px; font-family: "Playfair Display", serif; font-style: italic; font-weight: 900; font-size: 250px; line-height: 1.05;
+      background: linear-gradient(100deg, #fff1c9 0%, #ffd23f 25%, #ff9f43 50%, #ff3d7f 75%, #ffd23f 100%); background-size: 200% 100%;
+      -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.55));
+    }
+    .gsw { position: absolute; left: 50%; margin-left: -500px; bottom: -70px; }
+    .gstar { position: absolute; left: 50%; top: 50%; margin-left: -36px; margin-top: -36px; width: 72px; height: 72px; background: #ffd23f; clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="2160" data-height="3840">
+    <svg width="0" height="0" style="position: absolute"><defs><linearGradient id="gGrad" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#ffd23f" /><stop offset="55%" stop-color="#ff9f43" /><stop offset="100%" stop-color="#ff3d7f" /></linearGradient></defs></svg>
+    <div id="r1" class="clip cap" data-start="12.65" data-duration="1.75" data-track-index="0">
+      <div id="r1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r1-w0" class="gl">Can</span> <span id="r1-w1" class="gl">I</span> <span id="r1-w2" class="gl">see</span> <span id="r1-w3" class="gl">the</span> <span id="r1-w4" class="gk">menu,</span> <span id="r1-w5" class="gl">please?</span></div></div>
+    </div>
+    <div id="w1" class="clip cap" data-start="16.21" data-duration="1.99" data-track-index="1">
+      <div id="w1-lab" class="clab">Waiter</div>
+      <div id="w1-in" class="cap-in fast" data-layout-allow-overlap><span id="w1-line" class="cline"><span id="w1-w0" class="cw"><span id="w1-t0" class="ct">Of</span></span> <span id="w1-w1" class="cw"><span id="w1-t1" class="ct">course,</span></span> <span id="w1-w2" class="cw"><span id="w1-t2" class="ct">here</span></span> <span id="w1-w3" class="cw"><span id="w1-t3" class="ct">you</span></span> <span id="w1-w4" class="cw"><span id="w1-t4" class="ct">go!</span></span></span></div>
+    </div>
+    <div id="r2" class="clip cap" data-start="21.55" data-duration="1.55" data-track-index="0">
+      <div id="r2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r2-w0" class="gl">What</span> <span id="r2-w1" class="gl">do</span> <span id="r2-w2" class="gl">you</span> <span id="r2-w3" class="gk">recommend?</span></div></div>
+    </div>
+    <div id="w2" class="clip cap" data-start="24.36" data-duration="2.99" data-track-index="1">
+      <div id="w2-lab" class="clab">Waiter</div>
+      <div id="w2-in" class="cap-in fast" data-layout-allow-overlap><span id="w2-line" class="cline"><span id="w2-w0" class="cw"><span id="w2-t0" class="ct">I</span></span> <span id="w2-w1" class="cw"><span id="w2-t1" class="ct">recommend</span></span> <span id="w2-w2" class="cw"><span id="w2-t2" class="ct">the</span></span> <span id="w2-w3" class="cw"><span id="w2-t3" class="ct">chicken</span></span> <span id="w2-w4" class="cw"><span id="w2-t4" class="ct">sandwich.</span></span></span></div>
+    </div>
+    <div id="r3" class="clip cap" data-start="27.75" data-duration="2.7" data-track-index="0">
+      <div id="r3-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r3-w0" class="gl">Sounds</span> <span id="r3-w1" class="gl">good.</span> <span id="r3-w2" class="gl">I'll</span> <span id="r3-w3" class="gk">have</span> <span id="r3-w4" class="gl">one,</span> <span id="r3-w5" class="gl">please.</span></div></div>
+    </div>
+    <div id="w3" class="clip cap" data-start="33.65" data-duration="1.85" data-track-index="1">
+      <div id="w3-lab" class="clab">Waiter</div>
+      <div id="w3-in" class="cap-in fast" data-layout-allow-overlap><span id="w3-line" class="cline"><span id="w3-w0" class="cw"><span id="w3-t0" class="ct">Anything</span></span> <span id="w3-w1" class="cw"><span id="w3-t1" class="ct">to</span></span> <span id="w3-w2" class="cw"><span id="w3-t2" class="ct">drink,</span></span> <span id="w3-w3" class="cw"><span id="w3-t3" class="ct">ma'am?</span></span></span></div>
+    </div>
+    <div id="r4" class="clip cap" data-start="37.1" data-duration="1.7" data-track-index="0">
+      <div id="r4-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r4-w0" class="gl">Just</span> <span id="r4-w1" class="gk">water,</span> <span id="r4-w2" class="gl">please.</span></div></div>
+    </div>
+    <div id="m1" class="clip cap" data-start="41.6" data-duration="2.6" data-track-index="2">
+      <div id="m1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="m1-w0" class="gl">Can</span> <span id="m1-w1" class="gl">I</span> <span id="m1-w2" class="gl">see</span> <span id="m1-w3" class="gl">the</span> <span id="m1-w4" class="gk">menu?</span> <span id="m1-w5" class="gl">Please.</span></div><svg id="m1-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="m1-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="m1-st0" class="gstar" data-layout-ignore></div><div id="m1-st1" class="gstar" data-layout-ignore></div><div id="m1-st2" class="gstar" data-layout-ignore></div><div id="m1-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="m2" class="clip cap" data-start="46.35" data-duration="1.85" data-track-index="2">
+      <div id="m2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="m2-w0" class="gl">Can</span> <span id="m2-w1" class="gl">I</span> <span id="m2-w2" class="gl">see</span> <span id="m2-w3" class="gl">the</span> <span id="m2-w4" class="gk">menu,</span> <span id="m2-w5" class="gl">please?</span></div><svg id="m2-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="m2-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="m2-st0" class="gstar" data-layout-ignore></div><div id="m2-st1" class="gstar" data-layout-ignore></div><div id="m2-st2" class="gstar" data-layout-ignore></div><div id="m2-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="c1" class="clip cap" data-start="48.95" data-duration="1.75" data-track-index="2">
+      <div id="c1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="c1-w0" class="gl">What</span> <span id="c1-w1" class="gl">do</span> <span id="c1-w2" class="gl">you</span> <span id="c1-w3" class="gk">recommend?</span></div><svg id="c1-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="c1-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="c1-st0" class="gstar" data-layout-ignore></div><div id="c1-st1" class="gstar" data-layout-ignore></div><div id="c1-st2" class="gstar" data-layout-ignore></div><div id="c1-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="c2" class="clip cap" data-start="52.1" data-duration="1.7" data-track-index="2">
+      <div id="c2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="c2-w0" class="gl">What</span> <span id="c2-w1" class="gl">do</span> <span id="c2-w2" class="gl">you</span> <span id="c2-w3" class="gk">recommend?</span></div><svg id="c2-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="c2-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="c2-st0" class="gstar" data-layout-ignore></div><div id="c2-st1" class="gstar" data-layout-ignore></div><div id="c2-st2" class="gstar" data-layout-ignore></div><div id="c2-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="h1" class="clip cap" data-start="54.4" data-duration="3.1" data-track-index="2">
+      <div id="h1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="h1-w0" class="gl">I</span> <span id="h1-w1" class="gl">will</span> <span id="h1-w2" class="gk">have...</span></div><svg id="h1-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="h1-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="h1-st0" class="gstar" data-layout-ignore></div><div id="h1-st1" class="gstar" data-layout-ignore></div><div id="h1-st2" class="gstar" data-layout-ignore></div><div id="h1-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="h2" class="clip cap" data-start="57.5" data-duration="2.15" data-track-index="2">
+      <div id="h2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="h2-w0" class="gl">I</span> <span id="h2-w1" class="gl">will</span> <span id="h2-w2" class="gk">have...</span></div><svg id="h2-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="h2-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="h2-st0" class="gstar" data-layout-ignore></div><div id="h2-st1" class="gstar" data-layout-ignore></div><div id="h2-st2" class="gstar" data-layout-ignore></div><div id="h2-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="d1" class="clip cap" data-start="61.2" data-duration="1.3" data-track-index="2">
+      <div id="d1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="d1-w0" class="gl">Anything</span> <span id="d1-w1" class="gl">to</span> <span id="d1-w2" class="gk">drink?</span></div><svg id="d1-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="d1-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="d1-st0" class="gstar" data-layout-ignore></div><div id="d1-st1" class="gstar" data-layout-ignore></div><div id="d1-st2" class="gstar" data-layout-ignore></div><div id="d1-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="d2" class="clip cap" data-start="65.85" data-duration="1.4" data-track-index="2">
+      <div id="d2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="d2-w0" class="gl">Just</span> <span id="d2-w1" class="gk">water,</span> <span id="d2-w2" class="gl">please.</span></div><svg id="d2-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="d2-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="d2-st0" class="gstar" data-layout-ignore></div><div id="d2-st1" class="gstar" data-layout-ignore></div><div id="d2-st2" class="gstar" data-layout-ignore></div><div id="d2-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="e1" class="clip cap" data-start="72.7" data-duration="2.8" data-track-index="0">
+      <div id="e1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="e1-w0" class="gl">I</span> <span id="e1-w1" class="gl">will</span> <span id="e1-w2" class="gl">have</span> <span id="e1-w3" class="gl">a</span> <span id="e1-w4" class="gk">lasagna.</span></div></div>
+    </div>
+    <div id="e2" class="clip cap" data-start="75.55" data-duration="2.55" data-track-index="0">
+      <div id="e2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="e2-w0" class="gl">I</span> <span id="e2-w1" class="gl">will</span> <span id="e2-w2" class="gl">have</span> <span id="e2-w3" class="gl">a</span> <span id="e2-w4" class="gk">sandwich.</span></div></div>
+    </div>
+    <div id="e3" class="clip cap" data-start="78.2" data-duration="2.1" data-track-index="0">
+      <div id="e3-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="e3-w0" class="gl">I</span> <span id="e3-w1" class="gl">will</span> <span id="e3-w2" class="gl">have</span> <span id="e3-w3" class="gl">a</span> <span id="e3-w4" class="gk">taco.</span></div></div>
+    </div>
+    <div id="e4" class="clip cap" data-start="80.25" data-duration="2.05" data-track-index="0">
+      <div id="e4-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="e4-w0" class="gl">I</span> <span id="e4-w1" class="gl">will</span> <span id="e4-w2" class="gl">have</span> <span id="e4-w3" class="gk">pizza.</span></div></div>
+    </div>
+    <div id="r0r1" class="clip cap" data-start="95.0" data-duration="1.75" data-track-index="0">
+      <div id="r0r1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r0r1-w0" class="gl">Can</span> <span id="r0r1-w1" class="gl">I</span> <span id="r0r1-w2" class="gl">see</span> <span id="r0r1-w3" class="gl">the</span> <span id="r0r1-w4" class="gk">menu,</span> <span id="r0r1-w5" class="gl">please?</span></div></div>
+    </div>
+    <div id="r1r2" class="clip cap" data-start="96.7" data-duration="1.55" data-track-index="0">
+      <div id="r1r2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r1r2-w0" class="gl">What</span> <span id="r1r2-w1" class="gl">do</span> <span id="r1r2-w2" class="gl">you</span> <span id="r1r2-w3" class="gk">recommend?</span></div></div>
+    </div>
+    <div id="r2r3" class="clip cap" data-start="98.15" data-duration="2.7" data-track-index="0">
+      <div id="r2r3-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r2r3-w0" class="gl">Sounds</span> <span id="r2r3-w1" class="gl">good.</span> <span id="r2r3-w2" class="gl">I'll</span> <span id="r2r3-w3" class="gk">have</span> <span id="r2r3-w4" class="gl">one,</span> <span id="r2r3-w5" class="gl">please.</span></div></div>
+    </div>
+    <div id="r3r4" class="clip cap" data-start="100.75" data-duration="1.7" data-track-index="0">
+      <div id="r3r4-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r3r4-w0" class="gl">Just</span> <span id="r3r4-w1" class="gk">water,</span> <span id="r3r4-w2" class="gl">please.</span></div></div>
+    </div>
+    <div id="replay-tag" class="clip" data-start="95.0" data-duration="7.7" data-track-index="3">
+      <div id="replay-in"><span id="replay-ic">↻</span> REPLAY · say it with me</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#r1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 12.77);
+    tl.fromTo("#r1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 12.87);
+    tl.fromTo("#r1-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 13.01);
+    tl.fromTo("#r1-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 13.17);
+    tl.fromTo("#r1-w4", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 13.31);
+    tl.fromTo("#r1-w4", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.06, ease: "none" }, 13.31);
+    tl.fromTo("#r1-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 13.63);
+    tl.to("#r1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 14.21);
+    tl.fromTo("#w1-lab", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }, 16.21);
+    tl.fromTo("#w1-w0", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 16.33);
+    tl.fromTo("#w1-t0", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 16.48);
+    tl.fromTo("#w1-w1", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 16.69);
+    tl.fromTo("#w1-t1", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 16.84);
+    tl.fromTo("#w1-w2", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 17.27);
+    tl.fromTo("#w1-t2", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 17.42);
+    tl.fromTo("#w1-w3", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 17.43);
+    tl.fromTo("#w1-t3", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 17.58);
+    tl.fromTo("#w1-w4", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 17.55);
+    tl.fromTo("#w1-t4", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 17.7);
+    tl.to("#w1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 18.01);
+    tl.to("#w1-lab", { opacity: 0, duration: 0.15, ease: "power2.in" }, 18.01);
+    tl.fromTo("#r2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 21.67);
+    tl.fromTo("#r2-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 21.81);
+    tl.fromTo("#r2-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 22.01);
+    tl.fromTo("#r2-w3", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 22.07);
+    tl.fromTo("#r2-w3", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.0, ease: "none" }, 22.07);
+    tl.to("#r2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 22.91);
+    tl.fromTo("#w2-lab", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }, 24.36);
+    tl.fromTo("#w2-w0", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 24.48);
+    tl.fromTo("#w2-t0", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 24.63);
+    tl.fromTo("#w2-w1", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 25.1);
+    tl.fromTo("#w2-t1", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 25.25);
+    tl.fromTo("#w2-w2", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 25.72);
+    tl.fromTo("#w2-t2", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 25.87);
+    tl.fromTo("#w2-w3", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 26.12);
+    tl.fromTo("#w2-t3", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 26.27);
+    tl.fromTo("#w2-w4", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 26.48);
+    tl.fromTo("#w2-t4", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 26.63);
+    tl.to("#w2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 27.16);
+    tl.to("#w2-lab", { opacity: 0, duration: 0.15, ease: "power2.in" }, 27.16);
+    tl.fromTo("#r3-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 27.87);
+    tl.fromTo("#r3-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 28.09);
+    tl.fromTo("#r3-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 28.79);
+    tl.fromTo("#r3-w3", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 29.03);
+    tl.fromTo("#r3-w3", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.39, ease: "none" }, 29.03);
+    tl.fromTo("#r3-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 29.25);
+    tl.fromTo("#r3-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 29.73);
+    tl.to("#r3-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 30.26);
+    tl.fromTo("#w3-lab", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }, 33.65);
+    tl.fromTo("#w3-w0", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 33.77);
+    tl.fromTo("#w3-t0", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 33.92);
+    tl.fromTo("#w3-w1", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 34.17);
+    tl.fromTo("#w3-t1", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 34.32);
+    tl.fromTo("#w3-w2", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 34.47);
+    tl.fromTo("#w3-t2", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 34.62);
+    tl.fromTo("#w3-w3", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 34.87);
+    tl.fromTo("#w3-t3", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 35.02);
+    tl.to("#w3-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 35.31);
+    tl.to("#w3-lab", { opacity: 0, duration: 0.15, ease: "power2.in" }, 35.31);
+    tl.fromTo("#r4-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 37.22);
+    tl.fromTo("#r4-w1", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 37.36);
+    tl.fromTo("#r4-w1", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.41, ease: "none" }, 37.36);
+    tl.fromTo("#r4-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 38.08);
+    tl.to("#r4-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 38.61);
+    tl.fromTo("#m1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 41.72);
+    tl.fromTo("#m1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 41.84);
+    tl.fromTo("#m1-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 42.02);
+    tl.fromTo("#m1-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 42.26);
+    tl.fromTo("#m1-w4", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 42.42);
+    tl.fromTo("#m1-w4", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.75, ease: "none" }, 42.42);
+    tl.fromTo("#m1-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 43.42);
+    tl.to("#m1-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 42.57);
+    tl.fromTo("#m1-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 42.6);
+    tl.to("#m1-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 42.9);
+    tl.fromTo("#m1-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 42.65);
+    tl.to("#m1-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 42.95);
+    tl.fromTo("#m1-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 42.7);
+    tl.to("#m1-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 43.0);
+    tl.fromTo("#m1-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 42.75);
+    tl.to("#m1-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 43.05);
+    tl.to("#m1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 44.01);
+    tl.fromTo("#m2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 46.47);
+    tl.fromTo("#m2-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 46.61);
+    tl.fromTo("#m2-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 46.73);
+    tl.fromTo("#m2-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 46.93);
+    tl.fromTo("#m2-w4", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 47.09);
+    tl.fromTo("#m2-w4", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.08, ease: "none" }, 47.09);
+    tl.fromTo("#m2-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 47.59);
+    tl.to("#m2-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 47.24);
+    tl.fromTo("#m2-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 47.27);
+    tl.to("#m2-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 47.57);
+    tl.fromTo("#m2-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 47.32);
+    tl.to("#m2-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 47.62);
+    tl.fromTo("#m2-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 47.37);
+    tl.to("#m2-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 47.67);
+    tl.fromTo("#m2-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 47.42);
+    tl.to("#m2-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 47.72);
+    tl.to("#m2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 48.01);
+    tl.fromTo("#c1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 49.07);
+    tl.fromTo("#c1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 49.29);
+    tl.fromTo("#c1-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 49.61);
+    tl.fromTo("#c1-w3", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 49.75);
+    tl.fromTo("#c1-w3", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.92, ease: "none" }, 49.75);
+    tl.to("#c1-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 49.9);
+    tl.fromTo("#c1-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 49.93);
+    tl.to("#c1-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 50.23);
+    tl.fromTo("#c1-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 49.98);
+    tl.to("#c1-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 50.28);
+    tl.fromTo("#c1-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 50.03);
+    tl.to("#c1-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 50.33);
+    tl.fromTo("#c1-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 50.08);
+    tl.to("#c1-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 50.38);
+    tl.to("#c1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 50.51);
+    tl.fromTo("#c2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 52.22);
+    tl.fromTo("#c2-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 52.36);
+    tl.fromTo("#c2-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 52.62);
+    tl.fromTo("#c2-w3", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 52.82);
+    tl.fromTo("#c2-w3", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.95, ease: "none" }, 52.82);
+    tl.to("#c2-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 52.97);
+    tl.fromTo("#c2-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 53.0);
+    tl.to("#c2-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 53.3);
+    tl.fromTo("#c2-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 53.05);
+    tl.to("#c2-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 53.35);
+    tl.fromTo("#c2-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 53.1);
+    tl.to("#c2-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 53.4);
+    tl.fromTo("#c2-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 53.15);
+    tl.to("#c2-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 53.45);
+    tl.to("#c2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 53.61);
+    tl.fromTo("#h1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 54.52);
+    tl.fromTo("#h1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 54.68);
+    tl.fromTo("#h1-w2", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 56.12);
+    tl.fromTo("#h1-w2", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.35, ease: "none" }, 56.12);
+    tl.to("#h1-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 56.27);
+    tl.fromTo("#h1-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 56.3);
+    tl.to("#h1-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 56.6);
+    tl.fromTo("#h1-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 56.35);
+    tl.to("#h1-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 56.65);
+    tl.fromTo("#h1-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 56.4);
+    tl.to("#h1-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 56.7);
+    tl.fromTo("#h1-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 56.45);
+    tl.to("#h1-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 56.75);
+    tl.to("#h1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 57.31);
+    tl.fromTo("#h2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 57.62);
+    tl.fromTo("#h2-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 57.8);
+    tl.fromTo("#h2-w2", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 58.8);
+    tl.fromTo("#h2-w2", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.82, ease: "none" }, 58.8);
+    tl.to("#h2-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 58.95);
+    tl.fromTo("#h2-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 58.98);
+    tl.to("#h2-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 59.28);
+    tl.fromTo("#h2-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 59.03);
+    tl.to("#h2-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 59.33);
+    tl.fromTo("#h2-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 59.08);
+    tl.to("#h2-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 59.38);
+    tl.fromTo("#h2-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 59.13);
+    tl.to("#h2-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 59.43);
+    tl.to("#h2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 59.46);
+    tl.fromTo("#d1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 61.32);
+    tl.fromTo("#d1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 61.64);
+    tl.fromTo("#d1-w2", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 61.88);
+    tl.fromTo("#d1-w2", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.59, ease: "none" }, 61.88);
+    tl.to("#d1-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 62.03);
+    tl.fromTo("#d1-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 62.06);
+    tl.to("#d1-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 62.36);
+    tl.fromTo("#d1-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 62.11);
+    tl.to("#d1-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 62.41);
+    tl.fromTo("#d1-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 62.16);
+    tl.to("#d1-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 62.46);
+    tl.fromTo("#d1-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 62.21);
+    tl.to("#d1-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 62.51);
+    tl.to("#d1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 62.31);
+    tl.fromTo("#d2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 65.97);
+    tl.fromTo("#d2-w1", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 66.17);
+    tl.fromTo("#d2-w1", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.05, ease: "none" }, 66.17);
+    tl.fromTo("#d2-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 66.53);
+    tl.to("#d2-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 66.32);
+    tl.fromTo("#d2-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 66.35);
+    tl.to("#d2-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 66.65);
+    tl.fromTo("#d2-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 66.4);
+    tl.to("#d2-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 66.7);
+    tl.fromTo("#d2-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 66.45);
+    tl.to("#d2-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 66.75);
+    tl.fromTo("#d2-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 66.5);
+    tl.to("#d2-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 66.8);
+    tl.to("#d2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 67.06);
+    tl.fromTo("#e1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 72.82);
+    tl.fromTo("#e1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 72.96);
+    tl.fromTo("#e1-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 73.12);
+    tl.fromTo("#e1-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 73.4);
+    tl.fromTo("#e1-w4", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 73.66);
+    tl.fromTo("#e1-w4", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.81, ease: "none" }, 73.66);
+    tl.to("#e1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 75.31);
+    tl.fromTo("#e2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 75.67);
+    tl.fromTo("#e2-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 75.85);
+    tl.fromTo("#e2-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 76.01);
+    tl.fromTo("#e2-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 76.87);
+    tl.fromTo("#e2-w4", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 77.03);
+    tl.fromTo("#e2-w4", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.04, ease: "none" }, 77.03);
+    tl.to("#e2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 77.91);
+    tl.fromTo("#e3-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 78.32);
+    tl.fromTo("#e3-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 78.52);
+    tl.fromTo("#e3-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 78.72);
+    tl.fromTo("#e3-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 79.12);
+    tl.fromTo("#e3-w4", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 79.42);
+    tl.fromTo("#e3-w4", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.85, ease: "none" }, 79.42);
+    tl.to("#e3-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 80.11);
+    tl.fromTo("#e4-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 80.37);
+    tl.fromTo("#e4-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 80.57);
+    tl.fromTo("#e4-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 80.79);
+    tl.fromTo("#e4-w3", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 81.17);
+    tl.fromTo("#e4-w3", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.1, ease: "none" }, 81.17);
+    tl.to("#e4-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 82.11);
+    tl.fromTo("#r0r1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 95.12);
+    tl.fromTo("#r0r1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 95.22);
+    tl.fromTo("#r0r1-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 95.36);
+    tl.fromTo("#r0r1-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 95.52);
+    tl.fromTo("#r0r1-w4", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 95.66);
+    tl.fromTo("#r0r1-w4", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.06, ease: "none" }, 95.66);
+    tl.fromTo("#r0r1-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 95.98);
+    tl.to("#r0r1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 96.56);
+    tl.fromTo("#r1r2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 96.82);
+    tl.fromTo("#r1r2-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 96.96);
+    tl.fromTo("#r1r2-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 97.16);
+    tl.fromTo("#r1r2-w3", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 97.22);
+    tl.fromTo("#r1r2-w3", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.0, ease: "none" }, 97.22);
+    tl.to("#r1r2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 98.06);
+    tl.fromTo("#r2r3-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 98.27);
+    tl.fromTo("#r2r3-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 98.49);
+    tl.fromTo("#r2r3-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 99.19);
+    tl.fromTo("#r2r3-w3", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 99.43);
+    tl.fromTo("#r2r3-w3", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.39, ease: "none" }, 99.43);
+    tl.fromTo("#r2r3-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 99.65);
+    tl.fromTo("#r2r3-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 100.13);
+    tl.to("#r2r3-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 100.66);
+    tl.fromTo("#r3r4-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 100.87);
+    tl.fromTo("#r3r4-w1", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 101.01);
+    tl.fromTo("#r3r4-w1", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.41, ease: "none" }, 101.01);
+    tl.fromTo("#r3r4-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 101.73);
+    tl.to("#r3r4-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 102.26);
+    tl.fromTo("#replay-in", { opacity: 0, scale: 0.5, y: -60 }, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 95.0);
+    tl.fromTo("#replay-ic", { rotation: 0 }, { rotation: 360, duration: 0.8, ease: "power2.inOut" }, 95.0);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

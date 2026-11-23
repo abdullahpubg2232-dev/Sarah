@@ -1,0 +1,222 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .cap { position: absolute; left: 0; right: 0; top: 0; height: 3840px; overflow: visible; }
+    .cap-in { position: absolute; left: 160px; right: 160px; top: 2080px; text-align: center; }
+    .cline { position: relative; display: inline; font-family: "Poppins", sans-serif; font-weight: 900; font-size: 150px; line-height: 1.34; }
+    .cap-in.fast { top: 1900px; }
+    .cap-in.fast .cline { font-size: 104px; font-weight: 800; line-height: 1.3; }
+    .cw { position: relative; display: inline-block; margin: 0 6px; }
+    .pill { position: absolute; left: -24px; right: -24px; top: 14px; bottom: 6px; border-radius: 34px; background: #ffd23f; }
+    .pill.key { background: linear-gradient(135deg, #ffe066, #ff9f1c); }
+    .ct { position: relative; color: #ffffff; text-shadow: 0 8px 34px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5); }
+    .cstrike { position: absolute; left: -30px; right: -30px; top: 50%; height: 30px; margin-top: -15px; border-radius: 15px; background: #ff3b30; transform-origin: 0 50%; }
+    .clab { position: absolute; left: 0; right: 0; top: 1540px; width: fit-content; margin: 0 auto; padding: 18px 50px; border-radius: 999px; background: #e0241b; text-align: center; font-family: "Poppins", sans-serif; font-weight: 800; font-size: 76px; letter-spacing: 6px; line-height: 1.2; color: #ffffff; }
+    .big-in { position: absolute; left: 0; right: 0; top: 0; height: 3840px; }
+    .bigw { position: absolute; left: 0; right: 0; top: 2000px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 900; line-height: 1; letter-spacing: -4px; opacity: 0; }
+    .bigw span { color: #ffffff; text-shadow: 0 14px 50px rgba(0, 0, 0, 0.6), 0 3px 6px rgba(0, 0, 0, 0.45); }
+    .bigw.key span { background: linear-gradient(180deg, #fff1a8 0%, #ffd23f 45%, #ff8a00 100%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; filter: drop-shadow(0 14px 40px rgba(0, 0, 0, 0.55)); }
+    .kara-row { position: absolute; left: 0; right: 0; top: 2440px; text-align: center; }
+    .kara { display: inline-block; max-width: 1840px; padding: 26px 56px; border-radius: 60px; background: rgba(11, 11, 11, 0.6); font-family: "Poppins", sans-serif; font-weight: 800; font-size: 84px; line-height: 1.3; }
+    .kw { display: inline-block; color: rgba(255, 255, 255, 0.45); }
+    #replay-tag { position: absolute; left: 0; right: 0; top: 0; height: 3840px; }
+    #replay-in {
+      position: absolute; left: 0; right: 0; top: 520px; margin: 0 auto; width: 1500px; padding: 34px 0; border-radius: 999px; text-align: center;
+      background: linear-gradient(100deg, #d81b60, #e8590c); font-family: "Poppins", sans-serif; font-weight: 900; font-size: 92px; line-height: 1; color: #fff;
+      box-shadow: 0 30px 80px rgba(255, 61, 127, 0.45);
+    }
+    #replay-ic { display: inline-block; }
+    .g-in { position: absolute; left: 140px; right: 140px; top: 1720px; text-align: center; }
+    .gline { font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 150px; line-height: 1.25; color: #ffffff; }
+    .gl { display: inline-block; text-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); }
+    .gk {
+      display: inline-block; padding: 0 24px 20px; font-family: "Playfair Display", serif; font-style: italic; font-weight: 900; font-size: 250px; line-height: 1.05;
+      background: linear-gradient(100deg, #fff1c9 0%, #ffd23f 25%, #ff9f43 50%, #ff3d7f 75%, #ffd23f 100%); background-size: 200% 100%;
+      -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.55));
+    }
+    .gsw { position: absolute; left: 50%; margin-left: -500px; bottom: -70px; }
+    .gstar { position: absolute; left: 50%; top: 50%; margin-left: -36px; margin-top: -36px; width: 72px; height: 72px; background: #ffd23f; clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="2160" data-height="3840">
+    <svg width="0" height="0" style="position: absolute"><defs><linearGradient id="gGrad" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#ffd23f" /><stop offset="55%" stop-color="#ff9f43" /><stop offset="100%" stop-color="#ff3d7f" /></linearGradient></defs></svg>
+    <div id="p1" class="clip cap" data-start="9.2" data-duration="3.3" data-track-index="0">
+      <div id="p1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="p1-w0" class="gl">Excuse</span> <span id="p1-w1" class="gl">me,</span> <span id="p1-w2" class="gl">how</span> <span id="p1-w3" class="gl">do</span> <span id="p1-w4" class="gl">I</span> <span id="p1-w5" class="gl">get</span> <span id="p1-w6" class="gl">to</span> <span id="p1-w7" class="gl">the</span> <span id="p1-w8" class="gl">train</span> <span id="p1-w9" class="gk">station?</span></div></div>
+    </div>
+    <div id="p1b" class="clip cap" data-start="12.75" data-duration="3.25" data-track-index="2">
+      <div id="p1b-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="p1b-w0" class="gl">Excuse</span> <span id="p1b-w1" class="gl">me,</span> <span id="p1b-w2" class="gl">how</span> <span id="p1b-w3" class="gl">do</span> <span id="p1b-w4" class="gl">I</span> <span id="p1b-w5" class="gl">get</span> <span id="p1b-w6" class="gl">to</span> <span id="p1b-w7" class="gl">the</span> <span id="p1b-w8" class="gl">train</span> <span id="p1b-w9" class="gk">station?</span></div><svg id="p1b-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="p1b-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="p1b-st0" class="gstar" data-layout-ignore></div><div id="p1b-st1" class="gstar" data-layout-ignore></div><div id="p1b-st2" class="gstar" data-layout-ignore></div><div id="p1b-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="p2" class="clip cap" data-start="28.14" data-duration="1.51" data-track-index="0">
+      <div id="p2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="p2-w0" class="gl">Is</span> <span id="p2-w1" class="gl">it</span> <span id="p2-w2" class="gk">far</span> <span id="p2-w3" class="gl">from</span> <span id="p2-w4" class="gl">here?</span></div></div>
+    </div>
+    <div id="p2b" class="clip cap" data-start="30.05" data-duration="2.85" data-track-index="2">
+      <div id="p2b-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="p2b-w0" class="gl">Is</span> <span id="p2b-w1" class="gl">it</span> <span id="p2b-w2" class="gk">far</span> <span id="p2b-w3" class="gl">from</span> <span id="p2b-w4" class="gl">here?</span></div><svg id="p2b-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="p2b-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="p2b-st0" class="gstar" data-layout-ignore></div><div id="p2b-st1" class="gstar" data-layout-ignore></div><div id="p2b-st2" class="gstar" data-layout-ignore></div><div id="p2b-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="p3" class="clip cap" data-start="39.25" data-duration="2.2" data-track-index="0">
+      <div id="p3-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="p3-w0" class="gl">Can</span> <span id="p3-w1" class="gl">you</span> <span id="p3-w2" class="gl">show</span> <span id="p3-w3" class="gl">it</span> <span id="p3-w4" class="gl">to</span> <span id="p3-w5" class="gl">me</span> <span id="p3-w6" class="gl">on</span> <span id="p3-w7" class="gl">Google</span> <span id="p3-w8" class="gk">Maps?</span></div></div>
+    </div>
+    <div id="p3b" class="clip cap" data-start="41.85" data-duration="2.1" data-track-index="2">
+      <div id="p3b-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="p3b-w0" class="gl">Can</span> <span id="p3b-w1" class="gl">you</span> <span id="p3b-w2" class="gl">show</span> <span id="p3b-w3" class="gl">it</span> <span id="p3b-w4" class="gl">to</span> <span id="p3b-w5" class="gl">me</span> <span id="p3b-w6" class="gl">on</span> <span id="p3b-w7" class="gl">Google</span> <span id="p3b-w8" class="gk">Maps?</span></div><svg id="p3b-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="p3b-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="p3b-st0" class="gstar" data-layout-ignore></div><div id="p3b-st1" class="gstar" data-layout-ignore></div><div id="p3b-st2" class="gstar" data-layout-ignore></div><div id="p3b-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="p4" class="clip cap" data-start="51.05" data-duration="2.65" data-track-index="0">
+      <div id="p4-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="p4-w0" class="gl">How</span> <span id="p4-w1" class="gl">do</span> <span id="p4-w2" class="gl">I</span> <span id="p4-w3" class="gl">get</span> <span id="p4-w4" class="gl">to</span> <span id="p4-w5" class="gl">the</span> <span id="p4-w6" class="gl">coffee</span> <span id="p4-w7" class="gk">shop?</span></div></div>
+    </div>
+    <div id="r0p1" class="clip cap" data-start="63.5" data-duration="3.25" data-track-index="0">
+      <div id="r0p1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r0p1-w0" class="gl">Excuse</span> <span id="r0p1-w1" class="gl">me,</span> <span id="r0p1-w2" class="gl">how</span> <span id="r0p1-w3" class="gl">do</span> <span id="r0p1-w4" class="gl">I</span> <span id="r0p1-w5" class="gl">get</span> <span id="r0p1-w6" class="gl">to</span> <span id="r0p1-w7" class="gl">the</span> <span id="r0p1-w8" class="gl">train</span> <span id="r0p1-w9" class="gk">station?</span></div></div>
+    </div>
+    <div id="r1p2" class="clip cap" data-start="66.65" data-duration="1.5" data-track-index="0">
+      <div id="r1p2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r1p2-w0" class="gl">Is</span> <span id="r1p2-w1" class="gl">it</span> <span id="r1p2-w2" class="gk">far</span> <span id="r1p2-w3" class="gl">from</span> <span id="r1p2-w4" class="gl">here?</span></div></div>
+    </div>
+    <div id="r2p3" class="clip cap" data-start="68.05" data-duration="2.15" data-track-index="0">
+      <div id="r2p3-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r2p3-w0" class="gl">Can</span> <span id="r2p3-w1" class="gl">you</span> <span id="r2p3-w2" class="gl">show</span> <span id="r2p3-w3" class="gl">it</span> <span id="r2p3-w4" class="gl">to</span> <span id="r2p3-w5" class="gl">me</span> <span id="r2p3-w6" class="gl">on</span> <span id="r2p3-w7" class="gl">Google</span> <span id="r2p3-w8" class="gk">Maps?</span></div></div>
+    </div>
+    <div id="r3p4" class="clip cap" data-start="70.1" data-duration="2.75" data-track-index="0">
+      <div id="r3p4-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r3p4-w0" class="gl">How</span> <span id="r3p4-w1" class="gl">do</span> <span id="r3p4-w2" class="gl">I</span> <span id="r3p4-w3" class="gl">get</span> <span id="r3p4-w4" class="gl">to</span> <span id="r3p4-w5" class="gl">the</span> <span id="r3p4-w6" class="gl">coffee</span> <span id="r3p4-w7" class="gk">shop?</span></div></div>
+    </div>
+    <div id="replay-tag" class="clip" data-start="63.5" data-duration="9.55" data-track-index="3">
+      <div id="replay-in"><span id="replay-ic">↻</span> REPLAY · say it with me</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#p1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 9.32);
+    tl.fromTo("#p1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 9.68);
+    tl.fromTo("#p1-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 10.5);
+    tl.fromTo("#p1-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 10.68);
+    tl.fromTo("#p1-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 10.8);
+    tl.fromTo("#p1-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 10.94);
+    tl.fromTo("#p1-w6", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 11.12);
+    tl.fromTo("#p1-w7", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 11.26);
+    tl.fromTo("#p1-w8", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 11.38);
+    tl.fromTo("#p1-w9", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 11.6);
+    tl.fromTo("#p1-w9", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.87, ease: "none" }, 11.6);
+    tl.to("#p1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 12.31);
+    tl.fromTo("#p1b-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 12.87);
+    tl.fromTo("#p1b-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 13.29);
+    tl.fromTo("#p1b-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 14.07);
+    tl.fromTo("#p1b-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 14.23);
+    tl.fromTo("#p1b-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 14.33);
+    tl.fromTo("#p1b-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 14.47);
+    tl.fromTo("#p1b-w6", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 14.63);
+    tl.fromTo("#p1b-w7", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 14.79);
+    tl.fromTo("#p1b-w8", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 14.89);
+    tl.fromTo("#p1b-w9", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 15.11);
+    tl.fromTo("#p1b-w9", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.86, ease: "none" }, 15.11);
+    tl.to("#p1b-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 15.26);
+    tl.fromTo("#p1b-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 15.29);
+    tl.to("#p1b-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 15.59);
+    tl.fromTo("#p1b-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 15.34);
+    tl.to("#p1b-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 15.64);
+    tl.fromTo("#p1b-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 15.39);
+    tl.to("#p1b-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 15.69);
+    tl.fromTo("#p1b-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 15.44);
+    tl.to("#p1b-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 15.74);
+    tl.to("#p1b-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 15.81);
+    tl.fromTo("#p2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 28.26);
+    tl.fromTo("#p2-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 28.38);
+    tl.fromTo("#p2-w2", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 28.5);
+    tl.fromTo("#p2-w2", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.12, ease: "none" }, 28.5);
+    tl.fromTo("#p2-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 28.76);
+    tl.fromTo("#p2-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 29.02);
+    tl.to("#p2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 29.46);
+    tl.fromTo("#p2b-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 30.17);
+    tl.fromTo("#p2b-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 30.39);
+    tl.fromTo("#p2b-w2", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 31.22);
+    tl.fromTo("#p2b-w2", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.65, ease: "none" }, 31.22);
+    tl.fromTo("#p2b-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 31.56);
+    tl.fromTo("#p2b-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 32.24);
+    tl.to("#p2b-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 31.37);
+    tl.fromTo("#p2b-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 31.4);
+    tl.to("#p2b-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 31.7);
+    tl.fromTo("#p2b-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 31.45);
+    tl.to("#p2b-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 31.75);
+    tl.fromTo("#p2b-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 31.5);
+    tl.to("#p2b-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 31.8);
+    tl.fromTo("#p2b-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 31.55);
+    tl.to("#p2b-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 31.85);
+    tl.to("#p2b-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 32.71);
+    tl.fromTo("#p3-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 39.37);
+    tl.fromTo("#p3-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 39.47);
+    tl.fromTo("#p3-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 39.61);
+    tl.fromTo("#p3-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 39.91);
+    tl.fromTo("#p3-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 40.11);
+    tl.fromTo("#p3-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 40.25);
+    tl.fromTo("#p3-w6", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 40.39);
+    tl.fromTo("#p3-w7", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 40.61);
+    tl.fromTo("#p3-w8", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 40.81);
+    tl.fromTo("#p3-w8", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.61, ease: "none" }, 40.81);
+    tl.to("#p3-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 41.26);
+    tl.fromTo("#p3b-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 41.97);
+    tl.fromTo("#p3b-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 42.07);
+    tl.fromTo("#p3b-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 42.23);
+    tl.fromTo("#p3b-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 42.43);
+    tl.fromTo("#p3b-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 42.65);
+    tl.fromTo("#p3b-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 42.77);
+    tl.fromTo("#p3b-w6", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 42.87);
+    tl.fromTo("#p3b-w7", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 43.07);
+    tl.fromTo("#p3b-w8", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 43.29);
+    tl.fromTo("#p3b-w8", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.63, ease: "none" }, 43.29);
+    tl.to("#p3b-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 43.44);
+    tl.fromTo("#p3b-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 43.47);
+    tl.to("#p3b-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 43.77);
+    tl.fromTo("#p3b-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 43.52);
+    tl.to("#p3b-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 43.82);
+    tl.fromTo("#p3b-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 43.57);
+    tl.to("#p3b-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 43.87);
+    tl.fromTo("#p3b-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 43.62);
+    tl.to("#p3b-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 43.92);
+    tl.to("#p3b-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 43.76);
+    tl.fromTo("#p4-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 51.17);
+    tl.fromTo("#p4-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 51.37);
+    tl.fromTo("#p4-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 51.57);
+    tl.fromTo("#p4-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 51.71);
+    tl.fromTo("#p4-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 51.93);
+    tl.fromTo("#p4-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 52.62);
+    tl.fromTo("#p4-w6", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 52.78);
+    tl.fromTo("#p4-w7", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 53.06);
+    tl.fromTo("#p4-w7", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.61, ease: "none" }, 53.06);
+    tl.to("#p4-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 53.51);
+    tl.fromTo("#r0p1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 63.57);
+    tl.fromTo("#r0p1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 63.93);
+    tl.fromTo("#r0p1-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 64.75);
+    tl.fromTo("#r0p1-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 64.93);
+    tl.fromTo("#r0p1-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 65.05);
+    tl.fromTo("#r0p1-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 65.19);
+    tl.fromTo("#r0p1-w6", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 65.37);
+    tl.fromTo("#r0p1-w7", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 65.51);
+    tl.fromTo("#r0p1-w8", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 65.63);
+    tl.fromTo("#r0p1-w9", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 65.85);
+    tl.fromTo("#r0p1-w9", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.87, ease: "none" }, 65.85);
+    tl.to("#r0p1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 66.56);
+    tl.fromTo("#r1p2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 66.76);
+    tl.fromTo("#r1p2-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 66.88);
+    tl.fromTo("#r1p2-w2", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 67.0);
+    tl.fromTo("#r1p2-w2", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.12, ease: "none" }, 67.0);
+    tl.fromTo("#r1p2-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 67.26);
+    tl.fromTo("#r1p2-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 67.52);
+    tl.to("#r1p2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 67.96);
+    tl.fromTo("#r2p3-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 68.12);
+    tl.fromTo("#r2p3-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 68.22);
+    tl.fromTo("#r2p3-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 68.36);
+    tl.fromTo("#r2p3-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 68.66);
+    tl.fromTo("#r2p3-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 68.86);
+    tl.fromTo("#r2p3-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 69.0);
+    tl.fromTo("#r2p3-w6", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 69.14);
+    tl.fromTo("#r2p3-w7", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 69.36);
+    tl.fromTo("#r2p3-w8", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 69.56);
+    tl.fromTo("#r2p3-w8", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.61, ease: "none" }, 69.56);
+    tl.to("#r2p3-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 70.01);
+    tl.fromTo("#r3p4-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 70.32);
+    tl.fromTo("#r3p4-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 70.52);
+    tl.fromTo("#r3p4-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 70.72);
+    tl.fromTo("#r3p4-w3", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 70.86);
+    tl.fromTo("#r3p4-w4", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 71.08);
+    tl.fromTo("#r3p4-w5", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 71.77);
+    tl.fromTo("#r3p4-w6", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 71.93);
+    tl.fromTo("#r3p4-w7", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 72.21);
+    tl.fromTo("#r3p4-w7", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.61, ease: "none" }, 72.21);
+    tl.to("#r3p4-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 72.66);
+    tl.fromTo("#replay-in", { opacity: 0, scale: 0.5, y: -60 }, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 63.5);
+    tl.fromTo("#replay-ic", { rotation: 0 }, { rotation: 360, duration: 0.8, ease: "power2.inOut" }, 63.5);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

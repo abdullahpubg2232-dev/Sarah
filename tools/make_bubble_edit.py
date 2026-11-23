@@ -15,7 +15,10 @@ for f in os.listdir(f"{CAFE}/assets/sfx"):
 for f in os.listdir(f"{CAFE}/assets/fonts"):
     shutil.copy(f"{CAFE}/assets/fonts/{f}", f"{P}/assets/fonts/{f}")
 shutil.copy(f"{CAFE}/assets/pfp.jpg", f"{P}/assets/pfp.jpg")
-shutil.copy(f"{CAFE}/compositions/follow.html", f"{P}/compositions/follow.html")
+fol = open(f"{CAFE}/compositions/follow.html").read()
+n = int(spec.get("followers", 325))
+fol = fol.replace('<span id="fo-n1">325</span><span id="fo-n2">326</span>', f'<span id="fo-n1">{n}</span><span id="fo-n2">{n + 1}</span>')
+open(f"{P}/compositions/follow.html", "w").write(fol)
 shutil.copy(f"{CAFE}/.gitignore", f"{P}/.gitignore")
 
 FOOT = spec["footage_duration"]
@@ -295,7 +298,7 @@ punches = ",\n        ".join(f"[{g['words'][0][1]}, 1.045]" for g in groups if g
 sec_host = ""
 streak_js = ""
 wm = spec.get("watermark")
-wm_html = (f'      <div id="watermark" class="clip" data-start="0" data-duration="{round(REND,3)}" data-track-index="3">{wm}</div>' if wm else "")
+wm_html = (f'      <div id="watermark" class="clip" data-layout-ignore data-start="0" data-duration="{round(REND,3)}" data-track-index="3">{wm}</div>' if wm else "")
 if sections:
     last = max(s["end"] for s in sections)
     sec_host = (f'      <div id="sections" data-composition-id="sections" data-composition-src="compositions/sections.html" data-start="0" data-duration="{round(last + 0.1,3)}" data-track-index="7" data-track-kind="graphics" data-width="2160" data-height="3840" style="z-index: 6"></div>\n'

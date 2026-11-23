@@ -1,0 +1,69 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .sc { position: absolute; inset: 0; }
+    .sc-num { position: absolute; left: 180px; top: 400px; width: 520px; height: 360px; font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 360px; line-height: 1; letter-spacing: -14px; }
+    .sc-num span { position: absolute; left: 0; top: 0; }
+    .sc-num-o { color: transparent; -webkit-text-stroke: 6px rgba(255, 255, 255, 0.85); transform: translate(22px, 22px); }
+    .sc-num-f { background: linear-gradient(160deg, #fff1c9 0%, #ffd23f 30%, #ff9f43 60%, #ff3d7f 100%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.5)); }
+    .sc-card { position: absolute; left: 720px; top: 440px; width: 1160px; height: 300px; padding: 58px 0 0 70px; border-radius: 60px; background: rgba(15, 16, 22, 0.72); border: 3px solid rgba(255, 255, 255, 0.14); box-shadow: 0 40px 100px rgba(0, 0, 0, 0.45), inset 12px 0 0 var(--accent); white-space: nowrap; }
+    .sc-lab { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 58px; line-height: 1.2; letter-spacing: 6px; color: #ffd23f; }
+    .sc-mean { margin-top: 14px; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 76px; line-height: 1.2; color: #ffffff; }
+  </style>
+  <div id="root" data-composition-id="sections" data-width="2160" data-height="3840">
+    <div id="sc0" class="clip sc" data-start="41.6" data-duration="6.5" data-track-index="0">
+      <div id="sc0-num" class="sc-num" data-layout-allow-overlap><span class="sc-num-o">01</span><span class="sc-num-f" data-layout-allow-occlusion>01</span></div>
+      <div id="sc0-card" class="sc-card" style="--accent: #2ecc71">
+        <div class="sc-lab">THE MENU</div>
+        <div class="sc-mean">ask to see the menu</div>
+      </div>
+    </div>
+    <div id="sc1" class="clip sc" data-start="48.9" data-duration="4.85" data-track-index="1">
+      <div id="sc1-num" class="sc-num" data-layout-allow-overlap><span class="sc-num-o">02</span><span class="sc-num-f" data-layout-allow-occlusion>02</span></div>
+      <div id="sc1-card" class="sc-card" style="--accent: #4da3ff">
+        <div class="sc-lab">ASK FOR ADVICE</div>
+        <div class="sc-mean">what's good here?</div>
+      </div>
+    </div>
+    <div id="sc2" class="clip sc" data-start="54.4" data-duration="5.2" data-track-index="2">
+      <div id="sc2-num" class="sc-num" data-layout-allow-overlap><span class="sc-num-o">03</span><span class="sc-num-f" data-layout-allow-occlusion>03</span></div>
+      <div id="sc2-card" class="sc-card" style="--accent: #ffb52e">
+        <div class="sc-lab">ORDER FOOD</div>
+        <div class="sc-mean">I will have + food</div>
+      </div>
+    </div>
+    <div id="sc3" class="clip sc" data-start="61.2" data-duration="6.0" data-track-index="0">
+      <div id="sc3-num" class="sc-num" data-layout-allow-overlap><span class="sc-num-o">04</span><span class="sc-num-f" data-layout-allow-occlusion>04</span></div>
+      <div id="sc3-card" class="sc-card" style="--accent: #ff3d7f">
+        <div class="sc-lab">DRINKS</div>
+        <div class="sc-mean">order something to drink</div>
+      </div>
+    </div>
+    <div id="sc4" class="clip sc" data-start="72.7" data-duration="9.55" data-track-index="1">
+      <div id="sc4-num" class="sc-num" data-layout-allow-overlap><span class="sc-num-o">05</span><span class="sc-num-f" data-layout-allow-occlusion>05</span></div>
+      <div id="sc4-card" class="sc-card" style="--accent: #a66bff">
+        <div class="sc-lab">EXAMPLES</div>
+        <div class="sc-mean">I will have + anything</div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#sc0-num", { opacity: 0, x: -520, skewX: -18, scaleX: 1.5 }, { opacity: 1, x: 0, skewX: 0, scaleX: 1, duration: 0.42, ease: "expo.out" }, 41.6);
+    tl.fromTo("#sc0-card", { opacity: 0, x: 900, rotationY: -35, transformPerspective: 1600 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.5, ease: "back.out(1.4)" }, 41.72);
+    tl.to(["#sc0-num", "#sc0-card"], { opacity: 0, x: -200, duration: 0.18, ease: "power2.in" }, 47.9);
+    tl.fromTo("#sc1-num", { opacity: 0, x: -520, skewX: -18, scaleX: 1.5 }, { opacity: 1, x: 0, skewX: 0, scaleX: 1, duration: 0.42, ease: "expo.out" }, 48.9);
+    tl.fromTo("#sc1-card", { opacity: 0, x: 900, rotationY: -35, transformPerspective: 1600 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.5, ease: "back.out(1.4)" }, 49.02);
+    tl.to(["#sc1-num", "#sc1-card"], { opacity: 0, x: -200, duration: 0.18, ease: "power2.in" }, 53.55);
+    tl.fromTo("#sc2-num", { opacity: 0, x: -520, skewX: -18, scaleX: 1.5 }, { opacity: 1, x: 0, skewX: 0, scaleX: 1, duration: 0.42, ease: "expo.out" }, 54.4);
+    tl.fromTo("#sc2-card", { opacity: 0, x: 900, rotationY: -35, transformPerspective: 1600 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.5, ease: "back.out(1.4)" }, 54.52);
+    tl.to(["#sc2-num", "#sc2-card"], { opacity: 0, x: -200, duration: 0.18, ease: "power2.in" }, 59.4);
+    tl.fromTo("#sc3-num", { opacity: 0, x: -520, skewX: -18, scaleX: 1.5 }, { opacity: 1, x: 0, skewX: 0, scaleX: 1, duration: 0.42, ease: "expo.out" }, 61.2);
+    tl.fromTo("#sc3-card", { opacity: 0, x: 900, rotationY: -35, transformPerspective: 1600 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.5, ease: "back.out(1.4)" }, 61.32);
+    tl.to(["#sc3-num", "#sc3-card"], { opacity: 0, x: -200, duration: 0.18, ease: "power2.in" }, 67.0);
+    tl.fromTo("#sc4-num", { opacity: 0, x: -520, skewX: -18, scaleX: 1.5 }, { opacity: 1, x: 0, skewX: 0, scaleX: 1, duration: 0.42, ease: "expo.out" }, 72.7);
+    tl.fromTo("#sc4-card", { opacity: 0, x: 900, rotationY: -35, transformPerspective: 1600 }, { opacity: 1, x: 0, rotationY: 0, duration: 0.5, ease: "back.out(1.4)" }, 72.82);
+    tl.to(["#sc4-num", "#sc4-card"], { opacity: 0, x: -200, duration: 0.18, ease: "power2.in" }, 82.05);
+    window.__timelines["sections"] = tl;
+  </script>
+</template>

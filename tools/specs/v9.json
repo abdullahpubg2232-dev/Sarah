@@ -1,0 +1,354 @@
+{
+ "project": "/home/user/Sarah/hf-directions-video",
+ "footage_duration": 63.5,
+ "watermark": "English Mastery with Sara",
+ "groups": [
+  {
+   "id": "p1",
+   "kind": "sent",
+   "key": [
+    "station"
+   ],
+   "words": [
+    [
+     "Excuse",
+     9.35
+    ],
+    [
+     "me,",
+     9.71
+    ],
+    [
+     "how",
+     10.53
+    ],
+    [
+     "do",
+     10.71
+    ],
+    [
+     "I",
+     10.83
+    ],
+    [
+     "get",
+     10.97
+    ],
+    [
+     "to",
+     11.15
+    ],
+    [
+     "the",
+     11.29
+    ],
+    [
+     "train",
+     11.41
+    ],
+    [
+     "station?",
+     11.63
+    ]
+   ],
+   "end": 12.25
+  },
+  {
+   "id": "p1b",
+   "kind": "recv",
+   "key": [
+    "station"
+   ],
+   "words": [
+    [
+     "Excuse",
+     12.9
+    ],
+    [
+     "me,",
+     13.32
+    ],
+    [
+     "how",
+     14.1
+    ],
+    [
+     "do",
+     14.26
+    ],
+    [
+     "I",
+     14.36
+    ],
+    [
+     "get",
+     14.5
+    ],
+    [
+     "to",
+     14.66
+    ],
+    [
+     "the",
+     14.82
+    ],
+    [
+     "train",
+     14.92
+    ],
+    [
+     "station?",
+     15.14
+    ]
+   ],
+   "end": 15.75
+  },
+  {
+   "id": "p2",
+   "kind": "sent",
+   "key": [
+    "far"
+   ],
+   "words": [
+    [
+     "Is",
+     28.29
+    ],
+    [
+     "it",
+     28.41
+    ],
+    [
+     "far",
+     28.53
+    ],
+    [
+     "from",
+     28.79
+    ],
+    [
+     "here?",
+     29.05
+    ]
+   ],
+   "end": 29.4
+  },
+  {
+   "id": "p2b",
+   "kind": "recv",
+   "key": [
+    "far"
+   ],
+   "words": [
+    [
+     "Is",
+     30.2
+    ],
+    [
+     "it",
+     30.42
+    ],
+    [
+     "far",
+     31.25
+    ],
+    [
+     "from",
+     31.59
+    ],
+    [
+     "here?",
+     32.27
+    ]
+   ],
+   "end": 32.65
+  },
+  {
+   "id": "p3",
+   "kind": "sent",
+   "key": [
+    "Maps"
+   ],
+   "words": [
+    [
+     "Can",
+     39.4
+    ],
+    [
+     "you",
+     39.5
+    ],
+    [
+     "show",
+     39.64
+    ],
+    [
+     "it",
+     39.94
+    ],
+    [
+     "to",
+     40.14
+    ],
+    [
+     "me",
+     40.28
+    ],
+    [
+     "on",
+     40.42
+    ],
+    [
+     "Google",
+     40.64
+    ],
+    [
+     "Maps?",
+     40.84
+    ]
+   ],
+   "end": 41.2
+  },
+  {
+   "id": "p3b",
+   "kind": "recv",
+   "key": [
+    "Maps"
+   ],
+   "words": [
+    [
+     "Can",
+     42.0
+    ],
+    [
+     "you",
+     42.1
+    ],
+    [
+     "show",
+     42.26
+    ],
+    [
+     "it",
+     42.46
+    ],
+    [
+     "to",
+     42.68
+    ],
+    [
+     "me",
+     42.8
+    ],
+    [
+     "on",
+     42.9
+    ],
+    [
+     "Google",
+     43.1
+    ],
+    [
+     "Maps?",
+     43.32
+    ]
+   ],
+   "end": 43.7
+  },
+  {
+   "id": "p4",
+   "kind": "sent",
+   "key": [
+    "shop"
+   ],
+   "words": [
+    [
+     "How",
+     51.2
+    ],
+    [
+     "do",
+     51.4
+    ],
+    [
+     "I",
+     51.6
+    ],
+    [
+     "get",
+     51.74
+    ],
+    [
+     "to",
+     51.96
+    ],
+    [
+     "the",
+     52.65
+    ],
+    [
+     "coffee",
+     52.81
+    ],
+    [
+     "shop?",
+     53.09
+    ]
+   ],
+   "end": 53.45
+  }
+ ],
+ "replay": [
+  [
+   9.25,
+   12.35
+  ],
+  [
+   28.15,
+   29.5
+  ],
+  [
+   39.3,
+   41.3
+  ],
+  [
+   50.95,
+   53.55
+  ]
+ ],
+ "sections": [
+  {
+   "num": "01",
+   "start": 9.2,
+   "end": 15.9,
+   "label": "ASK THE WAY",
+   "meaning": "a polite way to ask directions",
+   "color": "#2ecc71"
+  },
+  {
+   "num": "02",
+   "start": 28.1,
+   "end": 32.8,
+   "label": "DISTANCE",
+   "meaning": "is it near or far?",
+   "color": "#4da3ff"
+  },
+  {
+   "num": "03",
+   "start": 39.2,
+   "end": 43.9,
+   "label": "ASK FOR HELP",
+   "meaning": "show me on the map",
+   "color": "#ffb52e"
+  },
+  {
+   "num": "04",
+   "start": 50.9,
+   "end": 53.75,
+   "label": "USE IT ANYWHERE",
+   "meaning": "how do I get to + any place",
+   "color": "#ff3d7f"
+  }
+ ],
+ "followers": 368
+}

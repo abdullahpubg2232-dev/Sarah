@@ -1,0 +1,588 @@
+{
+ "project": "/home/user/Sarah/hf-restaurant-video",
+ "footage_duration": 95.0,
+ "watermark": "English Mastery with Sara",
+ "followers": 368,
+ "groups": [
+  {
+   "id": "r1",
+   "kind": "sent",
+   "key": [
+    "menu"
+   ],
+   "words": [
+    [
+     "Can",
+     12.8
+    ],
+    [
+     "I",
+     12.9
+    ],
+    [
+     "see",
+     13.04
+    ],
+    [
+     "the",
+     13.2
+    ],
+    [
+     "menu,",
+     13.34
+    ],
+    [
+     "please?",
+     13.66
+    ]
+   ],
+   "end": 14.15
+  },
+  {
+   "id": "w1",
+   "kind": "fast",
+   "label": "Waiter",
+   "words": [
+    [
+     "Of",
+     16.36
+    ],
+    [
+     "course,",
+     16.72
+    ],
+    [
+     "here",
+     17.3
+    ],
+    [
+     "you",
+     17.46
+    ],
+    [
+     "go!",
+     17.58
+    ]
+   ],
+   "end": 17.95
+  },
+  {
+   "id": "r2",
+   "kind": "sent",
+   "key": [
+    "recommend"
+   ],
+   "words": [
+    [
+     "What",
+     21.7
+    ],
+    [
+     "do",
+     21.84
+    ],
+    [
+     "you",
+     22.04
+    ],
+    [
+     "recommend?",
+     22.1
+    ]
+   ],
+   "end": 22.85
+  },
+  {
+   "id": "w2",
+   "kind": "fast",
+   "label": "Waiter",
+   "words": [
+    [
+     "I",
+     24.51
+    ],
+    [
+     "recommend",
+     25.13
+    ],
+    [
+     "the",
+     25.75
+    ],
+    [
+     "chicken",
+     26.15
+    ],
+    [
+     "sandwich.",
+     26.51
+    ]
+   ],
+   "end": 27.1
+  },
+  {
+   "id": "r3",
+   "kind": "sent",
+   "key": [
+    "have"
+   ],
+   "words": [
+    [
+     "Sounds",
+     27.9
+    ],
+    [
+     "good.",
+     28.12
+    ],
+    [
+     "I'll",
+     28.82
+    ],
+    [
+     "have",
+     29.06
+    ],
+    [
+     "one,",
+     29.28
+    ],
+    [
+     "please.",
+     29.76
+    ]
+   ],
+   "end": 30.2
+  },
+  {
+   "id": "w3",
+   "kind": "fast",
+   "label": "Waiter",
+   "words": [
+    [
+     "Anything",
+     33.8
+    ],
+    [
+     "to",
+     34.2
+    ],
+    [
+     "drink,",
+     34.5
+    ],
+    [
+     "ma'am?",
+     34.9
+    ]
+   ],
+   "end": 35.25
+  },
+  {
+   "id": "r4",
+   "kind": "sent",
+   "key": [
+    "water"
+   ],
+   "words": [
+    [
+     "Just",
+     37.25
+    ],
+    [
+     "water,",
+     37.39
+    ],
+    [
+     "please.",
+     38.11
+    ]
+   ],
+   "end": 38.55
+  },
+  {
+   "id": "m1",
+   "kind": "recv",
+   "key": [
+    "menu"
+   ],
+   "words": [
+    [
+     "Can",
+     41.75
+    ],
+    [
+     "I",
+     41.87
+    ],
+    [
+     "see",
+     42.05
+    ],
+    [
+     "the",
+     42.29
+    ],
+    [
+     "menu?",
+     42.45
+    ],
+    [
+     "Please.",
+     43.45
+    ]
+   ],
+   "end": 43.95
+  },
+  {
+   "id": "m2",
+   "kind": "recv",
+   "key": [
+    "menu"
+   ],
+   "words": [
+    [
+     "Can",
+     46.5
+    ],
+    [
+     "I",
+     46.64
+    ],
+    [
+     "see",
+     46.76
+    ],
+    [
+     "the",
+     46.96
+    ],
+    [
+     "menu,",
+     47.12
+    ],
+    [
+     "please?",
+     47.62
+    ]
+   ],
+   "end": 47.95
+  },
+  {
+   "id": "c1",
+   "kind": "recv",
+   "key": [
+    "recommend"
+   ],
+   "words": [
+    [
+     "What",
+     49.1
+    ],
+    [
+     "do",
+     49.32
+    ],
+    [
+     "you",
+     49.64
+    ],
+    [
+     "recommend?",
+     49.78
+    ]
+   ],
+   "end": 50.45
+  },
+  {
+   "id": "c2",
+   "kind": "recv",
+   "key": [
+    "recommend"
+   ],
+   "words": [
+    [
+     "What",
+     52.25
+    ],
+    [
+     "do",
+     52.39
+    ],
+    [
+     "you",
+     52.65
+    ],
+    [
+     "recommend?",
+     52.85
+    ]
+   ],
+   "end": 53.55
+  },
+  {
+   "id": "h1",
+   "kind": "recv",
+   "key": [
+    "have"
+   ],
+   "words": [
+    [
+     "I",
+     54.55
+    ],
+    [
+     "will",
+     54.71
+    ],
+    [
+     "have...",
+     56.15
+    ]
+   ],
+   "end": 57.25
+  },
+  {
+   "id": "h2",
+   "kind": "recv",
+   "key": [
+    "have"
+   ],
+   "words": [
+    [
+     "I",
+     57.65
+    ],
+    [
+     "will",
+     57.83
+    ],
+    [
+     "have...",
+     58.83
+    ]
+   ],
+   "end": 59.4
+  },
+  {
+   "id": "d1",
+   "kind": "recv",
+   "key": [
+    "drink"
+   ],
+   "words": [
+    [
+     "Anything",
+     61.35
+    ],
+    [
+     "to",
+     61.67
+    ],
+    [
+     "drink?",
+     61.91
+    ]
+   ],
+   "end": 62.25
+  },
+  {
+   "id": "d2",
+   "kind": "recv",
+   "key": [
+    "water"
+   ],
+   "words": [
+    [
+     "Just",
+     66.0
+    ],
+    [
+     "water,",
+     66.2
+    ],
+    [
+     "please.",
+     66.56
+    ]
+   ],
+   "end": 67.0
+  },
+  {
+   "id": "e1",
+   "kind": "sent",
+   "key": [
+    "lasagna"
+   ],
+   "words": [
+    [
+     "I",
+     72.85
+    ],
+    [
+     "will",
+     72.99
+    ],
+    [
+     "have",
+     73.15
+    ],
+    [
+     "a",
+     73.43
+    ],
+    [
+     "lasagna.",
+     73.69
+    ]
+   ],
+   "end": 75.25
+  },
+  {
+   "id": "e2",
+   "kind": "sent",
+   "key": [
+    "sandwich"
+   ],
+   "words": [
+    [
+     "I",
+     75.7
+    ],
+    [
+     "will",
+     75.88
+    ],
+    [
+     "have",
+     76.04
+    ],
+    [
+     "a",
+     76.9
+    ],
+    [
+     "sandwich.",
+     77.06
+    ]
+   ],
+   "end": 77.85
+  },
+  {
+   "id": "e3",
+   "kind": "sent",
+   "key": [
+    "taco"
+   ],
+   "words": [
+    [
+     "I",
+     78.35
+    ],
+    [
+     "will",
+     78.55
+    ],
+    [
+     "have",
+     78.75
+    ],
+    [
+     "a",
+     79.15
+    ],
+    [
+     "taco.",
+     79.45
+    ]
+   ],
+   "end": 80.05
+  },
+  {
+   "id": "e4",
+   "kind": "sent",
+   "key": [
+    "pizza"
+   ],
+   "words": [
+    [
+     "I",
+     80.4
+    ],
+    [
+     "will",
+     80.6
+    ],
+    [
+     "have",
+     80.82
+    ],
+    [
+     "pizza.",
+     81.2
+    ]
+   ],
+   "end": 82.05
+  }
+ ],
+ "replay": [
+  [
+   12.65,
+   14.3
+  ],
+  [
+   21.55,
+   22.95
+  ],
+  [
+   27.75,
+   30.3
+  ],
+  [
+   37.1,
+   38.7
+  ]
+ ],
+ "sections": [
+  {
+   "num": "01",
+   "start": 41.6,
+   "end": 48.1,
+   "label": "THE MENU",
+   "meaning": "ask to see the menu",
+   "color": "#2ecc71"
+  },
+  {
+   "num": "02",
+   "start": 48.9,
+   "end": 53.75,
+   "label": "ASK FOR ADVICE",
+   "meaning": "what's good here?",
+   "color": "#4da3ff"
+  },
+  {
+   "num": "03",
+   "start": 54.4,
+   "end": 59.6,
+   "label": "ORDER FOOD",
+   "meaning": "I will have + food",
+   "color": "#ffb52e"
+  },
+  {
+   "num": "04",
+   "start": 61.2,
+   "end": 67.2,
+   "label": "DRINKS",
+   "meaning": "order something to drink",
+   "color": "#ff3d7f"
+  },
+  {
+   "num": "05",
+   "start": 72.7,
+   "end": 82.25,
+   "label": "EXAMPLES",
+   "meaning": "I will have + anything",
+   "color": "#a66bff"
+  }
+ ]
+}
