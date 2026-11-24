@@ -1,0 +1,144 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .cap { position: absolute; left: 0; right: 0; top: 0; height: 3840px; overflow: visible; }
+    .cap-in { position: absolute; left: 160px; right: 160px; top: 2080px; text-align: center; }
+    .cline { position: relative; display: inline; font-family: "Poppins", sans-serif; font-weight: 900; font-size: 150px; line-height: 1.34; }
+    .cap-in.fast { top: 1900px; }
+    .cap-in.fast .cline { font-size: 104px; font-weight: 800; line-height: 1.3; }
+    .cw { position: relative; display: inline-block; margin: 0 6px; }
+    .pill { position: absolute; left: -24px; right: -24px; top: 14px; bottom: 6px; border-radius: 34px; background: #ffd23f; }
+    .pill.key { background: linear-gradient(135deg, #ffe066, #ff9f1c); }
+    .ct { position: relative; color: #ffffff; text-shadow: 0 8px 34px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5); }
+    .cstrike { position: absolute; left: -30px; right: -30px; top: 50%; height: 30px; margin-top: -15px; border-radius: 15px; background: #ff3b30; transform-origin: 0 50%; }
+    .clab { position: absolute; left: 0; right: 0; top: 1540px; width: fit-content; margin: 0 auto; padding: 18px 50px; border-radius: 999px; background: #e0241b; text-align: center; font-family: "Poppins", sans-serif; font-weight: 800; font-size: 76px; letter-spacing: 6px; line-height: 1.2; color: #ffffff; }
+    .big-in { position: absolute; left: 0; right: 0; top: 0; height: 3840px; }
+    .bigw { position: absolute; left: 0; right: 0; top: 2000px; text-align: center; font-family: "Poppins", sans-serif; font-weight: 900; line-height: 1; letter-spacing: -4px; opacity: 0; }
+    .bigw span { color: #ffffff; text-shadow: 0 14px 50px rgba(0, 0, 0, 0.6), 0 3px 6px rgba(0, 0, 0, 0.45); }
+    .bigw.key span { background: linear-gradient(180deg, #fff1a8 0%, #ffd23f 45%, #ff8a00 100%); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: none; filter: drop-shadow(0 14px 40px rgba(0, 0, 0, 0.55)); }
+    .kara-row { position: absolute; left: 0; right: 0; top: 2440px; text-align: center; }
+    .kara { display: inline-block; max-width: 1840px; padding: 26px 56px; border-radius: 60px; background: rgba(11, 11, 11, 0.6); font-family: "Poppins", sans-serif; font-weight: 800; font-size: 84px; line-height: 1.3; }
+    .kw { display: inline-block; color: rgba(255, 255, 255, 0.45); }
+    #replay-tag { position: absolute; left: 0; right: 0; top: 0; height: 3840px; }
+    #replay-in {
+      position: absolute; left: 0; right: 0; top: 520px; margin: 0 auto; width: 1500px; padding: 34px 0; border-radius: 999px; text-align: center;
+      background: linear-gradient(100deg, #d81b60, #e8590c); font-family: "Poppins", sans-serif; font-weight: 900; font-size: 92px; line-height: 1; color: #fff;
+      box-shadow: 0 30px 80px rgba(255, 61, 127, 0.45);
+    }
+    #replay-ic { display: inline-block; }
+    .g-in { position: absolute; left: 140px; right: 140px; top: 1720px; text-align: center; }
+    .gline { font-family: "Montserrat", sans-serif; font-weight: 900; font-size: 150px; line-height: 1.25; color: #ffffff; }
+    .gl { display: inline-block; text-shadow: 0 12px 40px rgba(0, 0, 0, 0.6); }
+    .gk {
+      display: inline-block; padding: 0 24px 20px; font-family: "Playfair Display", serif; font-style: italic; font-weight: 900; font-size: 250px; line-height: 1.05;
+      background: linear-gradient(100deg, #fff1c9 0%, #ffd23f 25%, #ff9f43 50%, #ff3d7f 75%, #ffd23f 100%); background-size: 200% 100%;
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 22px rgba(0, 0, 0, 0.8)) drop-shadow(0 14px 30px rgba(0, 0, 0, 0.6));
+    }
+    .gsw { position: absolute; left: 50%; margin-left: -500px; bottom: -70px; }
+    .gstar { position: absolute; left: 50%; top: 50%; margin-left: -36px; margin-top: -36px; width: 72px; height: 72px; background: #ffd23f; clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="2160" data-height="3840">
+    <svg width="0" height="0" style="position: absolute"><defs><linearGradient id="gGrad" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#ffd23f" /><stop offset="55%" stop-color="#ff9f43" /><stop offset="100%" stop-color="#ff3d7f" /></linearGradient></defs></svg>
+    <div id="q1" class="clip cap" data-start="3.75" data-duration="1.15" data-track-index="0">
+      <div id="q1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="q1-w0" class="gl">What</span> <span id="q1-w1" class="gl">are</span> <span id="q1-w2" class="gl">you</span> <span id="q1-w3" class="gk">doing?</span></div></div>
+    </div>
+    <div id="q2" class="clip cap" data-start="5.0" data-duration="2.15" data-track-index="2">
+      <div id="q2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="q2-w0" class="gl">What</span> <span id="q2-w1" class="gl">are</span> <span id="q2-w2" class="gl">you</span> <span id="q2-w3" class="gk">doing?</span></div><svg id="q2-sw" class="gsw" viewBox="0 0 1000 120" width="1000" height="120" data-layout-ignore><path id="q2-path" d="M20 80 C 260 20, 600 20, 980 70" stroke="url(#gGrad)" stroke-width="22" stroke-linecap="round" fill="none" stroke-dasharray="1100" stroke-dashoffset="1100"/></svg><div id="q2-st0" class="gstar" data-layout-ignore></div><div id="q2-st1" class="gstar" data-layout-ignore></div><div id="q2-st2" class="gstar" data-layout-ignore></div><div id="q2-st3" class="gstar" data-layout-ignore></div></div>
+    </div>
+    <div id="a1" class="clip cap" data-start="9.69" data-duration="1.31" data-track-index="0">
+      <div id="a1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="a1-w0" class="gl">I'm</span> <span id="a1-w1" class="gk">reading.</span></div></div>
+    </div>
+    <div id="a2" class="clip cap" data-start="11.8" data-duration="1.3" data-track-index="0">
+      <div id="a2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="a2-w0" class="gl">I'm</span> <span id="a2-w1" class="gk">watching.</span></div></div>
+    </div>
+    <div id="a3" class="clip cap" data-start="13.8" data-duration="1.35" data-track-index="0">
+      <div id="a3-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="a3-w0" class="gl">I'm</span> <span id="a3-w1" class="gk">recording.</span></div></div>
+    </div>
+    <div id="r1" class="clip cap" data-start="24.93" data-duration="2.92" data-track-index="1">
+      <div id="r1-lab" class="clab">The rule</div>
+      <div id="r1-in" class="cap-in fast" data-layout-allow-overlap><span id="r1-line" class="cline"><span id="r1-w0" class="cw"><span id="r1-t0" class="ct">read</span></span> <span id="r1-w1" class="cw"><span id="r1-t1" class="ct">+</span></span> <span id="r1-w2" class="cw"><span id="r1-t2" class="ct">ING</span></span></span></div>
+    </div>
+    <div id="r0q1" class="clip cap" data-start="43.45" data-duration="1.15" data-track-index="0">
+      <div id="r0q1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r0q1-w0" class="gl">What</span> <span id="r0q1-w1" class="gl">are</span> <span id="r0q1-w2" class="gl">you</span> <span id="r0q1-w3" class="gk">doing?</span></div></div>
+    </div>
+    <div id="r1a1" class="clip cap" data-start="44.55" data-duration="1.3" data-track-index="0">
+      <div id="r1a1-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r1a1-w0" class="gl">I'm</span> <span id="r1a1-w1" class="gk">reading.</span></div></div>
+    </div>
+    <div id="r2a2" class="clip cap" data-start="45.75" data-duration="1.3" data-track-index="0">
+      <div id="r2a2-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r2a2-w0" class="gl">I'm</span> <span id="r2a2-w1" class="gk">watching.</span></div></div>
+    </div>
+    <div id="r3a3" class="clip cap" data-start="46.95" data-duration="1.35" data-track-index="0">
+      <div id="r3a3-in" class="g-in" data-layout-allow-overlap><div class="gline"><span id="r3a3-w0" class="gl">I'm</span> <span id="r3a3-w1" class="gk">recording.</span></div></div>
+    </div>
+    <div id="replay-tag" class="clip" data-start="43.45" data-duration="5.05" data-track-index="3">
+      <div id="replay-in"><span id="replay-ic">↻</span> REPLAY · say it with me</div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#q1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 3.87);
+    tl.fromTo("#q1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 3.93);
+    tl.fromTo("#q1-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 4.09);
+    tl.fromTo("#q1-w3", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 4.25);
+    tl.fromTo("#q1-w3", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.62, ease: "none" }, 4.25);
+    tl.to("#q1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 4.71);
+    tl.fromTo("#q2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 5.12);
+    tl.fromTo("#q2-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 5.82);
+    tl.fromTo("#q2-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 6.03);
+    tl.fromTo("#q2-w3", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 6.31);
+    tl.fromTo("#q2-w3", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.81, ease: "none" }, 6.31);
+    tl.to("#q2-path", { attr: { "stroke-dashoffset": 0 }, duration: 0.35, ease: "power3.out" }, 6.46);
+    tl.fromTo("#q2-st0", { opacity: 0, scale: 0, rotation: 0, x: -560, y: -170 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 6.49);
+    tl.to("#q2-st0", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 6.79);
+    tl.fromTo("#q2-st1", { opacity: 0, scale: 0, rotation: 0, x: 560, y: -190 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 6.54);
+    tl.to("#q2-st1", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 6.84);
+    tl.fromTo("#q2-st2", { opacity: 0, scale: 0, rotation: 0, x: -470, y: 150 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 6.59);
+    tl.to("#q2-st2", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 6.89);
+    tl.fromTo("#q2-st3", { opacity: 0, scale: 0, rotation: 0, x: 500, y: 130 }, { opacity: 1, scale: 1, rotation: 90, duration: 0.25, ease: "back.out(3)" }, 6.64);
+    tl.to("#q2-st3", { opacity: 0, scale: 0.3, rotation: 180, duration: 0.25, ease: "power2.in" }, 6.94);
+    tl.to("#q2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 6.96);
+    tl.fromTo("#a1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 9.81);
+    tl.fromTo("#a1-w1", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 10.25);
+    tl.fromTo("#a1-w1", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.72, ease: "none" }, 10.25);
+    tl.to("#a1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 10.81);
+    tl.fromTo("#a2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 11.92);
+    tl.fromTo("#a2-w1", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 12.22);
+    tl.fromTo("#a2-w1", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.85, ease: "none" }, 12.22);
+    tl.to("#a2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 12.91);
+    tl.fromTo("#a3-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 13.92);
+    tl.fromTo("#a3-w1", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 14.05);
+    tl.fromTo("#a3-w1", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.07, ease: "none" }, 14.05);
+    tl.to("#a3-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 14.96);
+    tl.fromTo("#r1-lab", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }, 24.93);
+    tl.fromTo("#r1-w0", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 25.05);
+    tl.fromTo("#r1-t0", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 25.2);
+    tl.fromTo("#r1-w1", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 25.63);
+    tl.fromTo("#r1-t1", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 25.78);
+    tl.fromTo("#r1-w2", { opacity: 0, y: 70, scale: 0.7 }, { opacity: 1, y: 0, scale: 1, duration: 0.2, ease: "back.out(2)" }, 26.67);
+    tl.fromTo("#r1-t2", { color: "#ffd23f" }, { color: "#ffffff", duration: 0.25, ease: "none" }, 26.82);
+    tl.to("#r1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 27.66);
+    tl.to("#r1-lab", { opacity: 0, duration: 0.15, ease: "power2.in" }, 27.66);
+    tl.fromTo("#r0q1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 43.57);
+    tl.fromTo("#r0q1-w1", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 43.63);
+    tl.fromTo("#r0q1-w2", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 43.79);
+    tl.fromTo("#r0q1-w3", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 43.95);
+    tl.fromTo("#r0q1-w3", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.62, ease: "none" }, 43.95);
+    tl.to("#r0q1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 44.41);
+    tl.fromTo("#r1a1-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 44.66);
+    tl.fromTo("#r1a1-w1", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 45.1);
+    tl.fromTo("#r1a1-w1", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.72, ease: "none" }, 45.1);
+    tl.to("#r1a1-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 45.66);
+    tl.fromTo("#r2a2-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 45.87);
+    tl.fromTo("#r2a2-w1", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 46.17);
+    tl.fromTo("#r2a2-w1", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 0.85, ease: "none" }, 46.17);
+    tl.to("#r2a2-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 46.86);
+    tl.fromTo("#r3a3-w0", { opacity: 0, y: 70, rotationX: -70, transformPerspective: 900 }, { opacity: 1, y: 0, rotationX: 0, duration: 0.26, ease: "back.out(1.8)" }, 47.07);
+    tl.fromTo("#r3a3-w1", { opacity: 0, scale: 0.5, scaleX: 1.35, y: 40 }, { opacity: 1, scale: 1, scaleX: 1, y: 0, duration: 0.32, ease: "back.out(2.2)" }, 47.2);
+    tl.fromTo("#r3a3-w1", { backgroundPosition: "0% 50%" }, { backgroundPosition: "100% 50%", duration: 1.07, ease: "none" }, 47.2);
+    tl.to("#r3a3-in", { opacity: 0, y: -60, scale: 0.94, duration: 0.18, ease: "power2.in" }, 48.11);
+    tl.fromTo("#replay-in", { opacity: 0, scale: 0.5, y: -60 }, { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 43.45);
+    tl.fromTo("#replay-ic", { rotation: 0 }, { rotation: 360, duration: 0.8, ease: "power2.inOut" }, 43.45);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

@@ -1,0 +1,186 @@
+{
+ "project": "/home/user/Sarah/hf-doing-video",
+ "footage_duration": 43.45,
+ "watermark": "English Mastery with Sara",
+ "followers": 368,
+ "groups": [
+  {
+   "id": "q1",
+   "kind": "sent",
+   "key": [
+    "doing"
+   ],
+   "words": [
+    [
+     "What",
+     3.9
+    ],
+    [
+     "are",
+     3.96
+    ],
+    [
+     "you",
+     4.12
+    ],
+    [
+     "doing?",
+     4.28
+    ]
+   ],
+   "end": 4.65
+  },
+  {
+   "id": "q2",
+   "kind": "recv",
+   "key": [
+    "doing"
+   ],
+   "words": [
+    [
+     "What",
+     5.15
+    ],
+    [
+     "are",
+     5.85
+    ],
+    [
+     "you",
+     6.06
+    ],
+    [
+     "doing?",
+     6.34
+    ]
+   ],
+   "end": 6.9
+  },
+  {
+   "id": "a1",
+   "kind": "sent",
+   "key": [
+    "reading"
+   ],
+   "words": [
+    [
+     "I'm",
+     9.84
+    ],
+    [
+     "reading.",
+     10.28
+    ]
+   ],
+   "end": 10.75
+  },
+  {
+   "id": "a2",
+   "kind": "sent",
+   "key": [
+    "watching"
+   ],
+   "words": [
+    [
+     "I'm",
+     11.95
+    ],
+    [
+     "watching.",
+     12.25
+    ]
+   ],
+   "end": 12.85
+  },
+  {
+   "id": "a3",
+   "kind": "sent",
+   "key": [
+    "recording"
+   ],
+   "words": [
+    [
+     "I'm",
+     13.95
+    ],
+    [
+     "recording.",
+     14.08
+    ]
+   ],
+   "end": 14.9
+  },
+  {
+   "id": "r1",
+   "kind": "fast",
+   "label": "The rule",
+   "words": [
+    [
+     "read",
+     25.08
+    ],
+    [
+     "+",
+     25.66
+    ],
+    [
+     "ING",
+     26.7
+    ]
+   ],
+   "end": 27.6
+  }
+ ],
+ "replay": [
+  [
+   3.75,
+   4.8
+  ],
+  [
+   9.7,
+   10.85
+  ],
+  [
+   11.8,
+   12.95
+  ],
+  [
+   13.8,
+   15.0
+  ]
+ ],
+ "sections": [
+  {
+   "num": "01",
+   "start": 3.75,
+   "end": 6.95,
+   "label": "ASK",
+   "meaning": "what is someone doing now?",
+   "color": "#2ecc71"
+  },
+  {
+   "num": "02",
+   "start": 9.7,
+   "end": 15.0,
+   "label": "ANSWER",
+   "meaning": "I'm + verb + ING",
+   "color": "#4da3ff"
+  },
+  {
+   "num": "03",
+   "start": 24.6,
+   "end": 31.0,
+   "label": "THE RULE",
+   "meaning": "read + ING = reading",
+   "color": "#ffb52e"
+  },
+  {
+   "num": "04",
+   "start": 33.2,
+   "end": 38.9,
+   "label": "SAME RULE",
+   "meaning": "watch + ING = watching",
+   "color": "#ff3d7f"
+  }
+ ]
+}
