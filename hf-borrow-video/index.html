@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" data-resolution="portrait-4k">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=2160, height=3840" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 2160px; height: 3840px; overflow: hidden; background: #07090f; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+      #cam, #punch { position: absolute; inset: 0; transform-origin: 50% 30%; }
+      #cam { z-index: 1; }
+      #footage, .rp { position: absolute; left: 0; top: 0; width: 2160px; height: 3840px; object-fit: cover; }
+      .streak {
+        position: absolute; left: -1600px; top: -600px; width: 1100px; height: 5040px; z-index: 9; opacity: 0; mix-blend-mode: screen;
+        background: linear-gradient(90deg, rgba(255,210,63,0) 0%, rgba(255,159,67,0.55) 35%, rgba(255,255,255,0.85) 50%, rgba(255,61,127,0.55) 65%, rgba(255,61,127,0) 100%);
+      }
+      #watermark {
+        position: absolute; left: 0; right: 0; top: 900px; z-index: 6; text-align: center;
+        font-family: "Montserrat", sans-serif; font-weight: 700; font-size: 66px; letter-spacing: 3px; line-height: 1.2;
+        color: rgba(255, 255, 255, 0.42); text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+      }
+      #replay-shade { position: absolute; inset: 0; z-index: 2; box-shadow: inset 0 0 0 26px #ff3d7f; }
+      #shade {
+        position: absolute; inset: 0; z-index: 2;
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 45%, rgba(0,0,0,0.45) 70%, rgba(0,0,0,0.6) 100%),
+          radial-gradient(ellipse 75% 60% at 50% 38%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.35) 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="85.42" data-width="2160" data-height="3840">
+      <div id="cam">
+        <div id="punch">
+          <video id="footage" class="clip" src="assets/footage.mp4" data-start="0" data-duration="76.62" data-track-index="0" data-has-audio="true" data-volume="1" playsinline></video>
+      <video id="rp0" class="clip rp" src="assets/footage.mp4" data-start="76.62" data-duration="1.75" data-media-start="22.8" data-track-index="2" data-has-audio="true" data-volume="1" playsinline></video>
+      <video id="rp1" class="clip rp" src="assets/footage.mp4" data-start="78.42" data-duration="2.85" data-media-start="48.55" data-track-index="3" data-has-audio="true" data-volume="1" playsinline></video>
+        </div>
+      </div>
+      <div id="shade" class="clip" data-start="0" data-duration="81.62" data-track-index="1"></div>
+      <div id="replay-shade" class="clip" data-start="76.62" data-duration="5.0" data-track-index="4"></div>
+      <div id="sections" data-composition-id="sections" data-composition-src="compositions/sections.html" data-start="0" data-duration="65.7" data-track-index="7" data-track-kind="graphics" data-width="2160" data-height="3840" style="z-index: 6"></div>
+      <div id="streak0" class="clip streak" data-start="11.05" data-duration="0.6" data-track-index="8" data-layout-ignore></div>
+      <div id="streak1" class="clip streak" data-start="32.95" data-duration="0.6" data-track-index="8" data-layout-ignore></div>
+      <div id="streak2" class="clip streak" data-start="59.15" data-duration="0.6" data-track-index="8" data-layout-ignore></div>
+      <div id="watermark" class="clip" data-layout-ignore data-start="0" data-duration="81.62" data-track-index="3">English Mastery with Sara</div>
+      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="81.62" data-track-index="5" data-track-kind="captions" data-width="2160" data-height="3840" style="z-index: 7"></div>
+      <div id="follow" data-composition-id="follow" data-composition-src="compositions/follow.html" data-start="81.62" data-duration="3.8" data-track-index="6" data-track-kind="graphics" data-width="2160" data-height="3840" style="z-index: 11"></div>
+      <!-- Music bed at 20% (Mixkit #1168 "Coffee or Tea", Mixkit Stock Music Free License) -->
+      <audio id="music" class="clip" src="assets/music.mp3" data-start="0" data-duration="85.42" data-track-index="9" data-volume="0.2"></audio>
+      <!-- Sound effects (CC0) -->
+      <audio id="sfx-w1" class="clip" src="assets/sfx/pop.ogg" data-start="12.15" data-duration="0.12" data-track-index="10" data-volume="0.5"></audio>
+      <audio id="sfx-w1-key" class="clip" src="assets/sfx/pop.ogg" data-start="12.3" data-duration="0.12" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-b1" class="clip" src="assets/sfx/pop.ogg" data-start="22.78" data-duration="0.12" data-track-index="10" data-volume="0.5"></audio>
+      <audio id="sfx-b1-key" class="clip" src="assets/sfx/pop.ogg" data-start="23.21" data-duration="0.12" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-b2" class="clip" src="assets/sfx/pop2.ogg" data-start="25.28" data-duration="0.08" data-track-index="10" data-volume="0.5"></audio>
+      <audio id="sfx-b2-key" class="clip" src="assets/sfx/pop2.ogg" data-start="26.28" data-duration="0.08" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-w2" class="clip" src="assets/sfx/pop.ogg" data-start="33.13" data-duration="0.12" data-track-index="10" data-volume="0.5"></audio>
+      <audio id="sfx-w2-key" class="clip" src="assets/sfx/pop.ogg" data-start="33.28" data-duration="0.12" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-l1" class="clip" src="assets/sfx/pop.ogg" data-start="48.53" data-duration="0.12" data-track-index="10" data-volume="0.5"></audio>
+      <audio id="sfx-l1-key" class="clip" src="assets/sfx/pop.ogg" data-start="49.96" data-duration="0.12" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-l2" class="clip" src="assets/sfx/pop2.ogg" data-start="51.58" data-duration="0.08" data-track-index="10" data-volume="0.5"></audio>
+      <audio id="sfx-l2-key" class="clip" src="assets/sfx/pop2.ogg" data-start="52.27" data-duration="0.08" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-w3" class="clip" src="assets/sfx/pop.ogg" data-start="60.74" data-duration="0.12" data-track-index="10" data-volume="0.5"></audio>
+      <audio id="sfx-w3-key" class="clip" src="assets/sfx/pop.ogg" data-start="60.89" data-duration="0.12" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-w4" class="clip" src="assets/sfx/pop.ogg" data-start="63.52" data-duration="0.12" data-track-index="10" data-volume="0.5"></audio>
+      <audio id="sfx-w4-key" class="clip" src="assets/sfx/pop.ogg" data-start="63.67" data-duration="0.12" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-r0b1" class="clip" src="assets/sfx/pop.ogg" data-start="76.6" data-duration="0.12" data-track-index="10" data-volume="0.5"></audio>
+      <audio id="sfx-r0b1-key" class="clip" src="assets/sfx/pop.ogg" data-start="77.03" data-duration="0.12" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-r1l1" class="clip" src="assets/sfx/pop.ogg" data-start="78.4" data-duration="0.12" data-track-index="10" data-volume="0.5"></audio>
+      <audio id="sfx-r1l1-key" class="clip" src="assets/sfx/pop.ogg" data-start="79.83" data-duration="0.12" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-sc0-whoosh" class="clip" src="assets/sfx/whoosh.ogg" data-start="11.12" data-duration="0.28" data-track-index="10" data-volume="0.35"></audio>
+      <audio id="sfx-sc0-pop" class="clip" src="assets/sfx/pop.ogg" data-start="11.25" data-duration="0.12" data-track-index="11" data-volume="0.45"></audio>
+      <audio id="sfx-sc1-whoosh" class="clip" src="assets/sfx/whoosh.ogg" data-start="33.02" data-duration="0.28" data-track-index="11" data-volume="0.35"></audio>
+      <audio id="sfx-sc1-pop" class="clip" src="assets/sfx/pop.ogg" data-start="33.15" data-duration="0.12" data-track-index="12" data-volume="0.45"></audio>
+      <audio id="sfx-sc2-whoosh" class="clip" src="assets/sfx/whoosh.ogg" data-start="59.22" data-duration="0.28" data-track-index="10" data-volume="0.35"></audio>
+      <audio id="sfx-sc2-pop" class="clip" src="assets/sfx/pop.ogg" data-start="59.35" data-duration="0.12" data-track-index="11" data-volume="0.45"></audio>
+      <audio id="sfx-replay" class="clip" src="assets/sfx/whoosh.ogg" data-start="76.62" data-duration="0.28" data-track-index="11" data-volume="0.35"></audio>
+      <audio id="sfx-fo-whoosh" class="clip" src="assets/sfx/whoosh.ogg" data-start="81.64" data-duration="0.28" data-track-index="10" data-volume="0.35"></audio>
+      <audio id="sfx-fo-pop" class="clip" src="assets/sfx/pop.ogg" data-start="81.74" data-duration="0.12" data-track-index="11" data-volume="0.5"></audio>
+      <audio id="sfx-fo-avatar" class="clip" src="assets/sfx/pop2.ogg" data-start="82.1" data-duration="0.08" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-fo-click" class="clip" src="assets/sfx/click.ogg" data-start="83.47" data-duration="0.1" data-track-index="10" data-volume="0.8"></audio>
+      <audio id="sfx-fo-ding" class="clip" src="assets/sfx/ding.ogg" data-start="83.53" data-duration="0.69" data-track-index="11" data-volume="0.5"></audio>
+      <audio id="sfx-fo-toast" class="clip" src="assets/sfx/pop.ogg" data-start="83.67" data-duration="0.12" data-track-index="10" data-volume="0.45"></audio>
+      <audio id="sfx-fo-exit" class="clip" src="assets/sfx/whoosh.ogg" data-start="84.87" data-duration="0.28" data-track-index="10" data-volume="0.35"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#cam", { scale: 1.02 }, { scale: 1.08, duration: 76.62, ease: "none" }, 0);
+      tl.to("#cam", { scale: 1.04, duration: 0.3, ease: "power2.out" }, 76.62);
+      tl.set("#punch", { scale: 1 }, 0);
+      [
+        [12.32, 1.045],
+        [22.95, 1.045],
+        [33.3, 1.045],
+        [48.7, 1.045],
+        [60.91, 1.045],
+        [63.69, 1.045]
+      ].forEach(([t, s]) => {
+        tl.to("#punch", { scale: s, duration: 0.2, ease: "back.out(2)" }, t);
+        tl.to("#punch", { scale: 1, duration: 0.7, ease: "power2.inOut" }, t + 1.2);
+      });
+      tl.fromTo("#streak0", { x: 0, rotation: 18, opacity: 0 }, { x: 4200, rotation: 18, opacity: 1, duration: 0.55, ease: "power2.inOut" }, 11.05);
+      tl.fromTo("#streak1", { x: 0, rotation: 18, opacity: 0 }, { x: 4200, rotation: 18, opacity: 1, duration: 0.55, ease: "power2.inOut" }, 32.95);
+      tl.fromTo("#streak2", { x: 0, rotation: 18, opacity: 0 }, { x: 4200, rotation: 18, opacity: 1, duration: 0.55, ease: "power2.inOut" }, 59.15);
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

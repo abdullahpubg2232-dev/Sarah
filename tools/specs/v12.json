@@ -1,0 +1,228 @@
+{
+ "project": "/home/user/Sarah/hf-borrow-video",
+ "footage_duration": 76.62,
+ "watermark": "English Mastery with Sara",
+ "followers": 368,
+ "groups": [
+  {
+   "id": "w1",
+   "kind": "sent",
+   "key": [
+    "borrow"
+   ],
+   "words": [
+    [
+     "borrow",
+     12.32
+    ]
+   ],
+   "end": 12.95
+  },
+  {
+   "id": "b1",
+   "kind": "sent",
+   "key": [
+    "borrow"
+   ],
+   "words": [
+    [
+     "Can",
+     22.95
+    ],
+    [
+     "I",
+     23.07
+    ],
+    [
+     "borrow",
+     23.23
+    ],
+    [
+     "your",
+     23.57
+    ],
+    [
+     "pen?",
+     23.91
+    ]
+   ],
+   "end": 24.45
+  },
+  {
+   "id": "b2",
+   "kind": "recv",
+   "key": [
+    "borrow"
+   ],
+   "words": [
+    [
+     "Can",
+     25.45
+    ],
+    [
+     "I",
+     25.57
+    ],
+    [
+     "borrow",
+     26.3
+    ],
+    [
+     "your",
+     26.8
+    ],
+    [
+     "pen?",
+     27.3
+    ]
+   ],
+   "end": 27.7
+  },
+  {
+   "id": "w2",
+   "kind": "sent",
+   "key": [
+    "lend"
+   ],
+   "words": [
+    [
+     "lend",
+     33.3
+    ]
+   ],
+   "end": 34.2
+  },
+  {
+   "id": "l1",
+   "kind": "sent",
+   "key": [
+    "lend"
+   ],
+   "words": [
+    [
+     "I",
+     48.7
+    ],
+    [
+     "will",
+     49.52
+    ],
+    [
+     "lend",
+     49.98
+    ],
+    [
+     "you",
+     50.32
+    ],
+    [
+     "my",
+     50.52
+    ],
+    [
+     "pen.",
+     50.72
+    ]
+   ],
+   "end": 51.3
+  },
+  {
+   "id": "l2",
+   "kind": "recv",
+   "key": [
+    "lend"
+   ],
+   "words": [
+    [
+     "I",
+     51.75
+    ],
+    [
+     "will",
+     51.95
+    ],
+    [
+     "lend",
+     52.29
+    ],
+    [
+     "you",
+     52.89
+    ],
+    [
+     "my",
+     53.19
+    ],
+    [
+     "pen.",
+     53.59
+    ]
+   ],
+   "end": 54.0
+  },
+  {
+   "id": "w3",
+   "kind": "sent",
+   "key": [
+    "borrow"
+   ],
+   "words": [
+    [
+     "borrow",
+     60.91
+    ]
+   ],
+   "end": 61.6
+  },
+  {
+   "id": "w4",
+   "kind": "sent",
+   "key": [
+    "lend"
+   ],
+   "words": [
+    [
+     "lend",
+     63.69
+    ]
+   ],
+   "end": 64.3
+  }
+ ],
+ "replay": [
+  [
+   22.8,
+   24.55
+  ],
+  [
+   48.55,
+   51.4
+  ]
+ ],
+ "sections": [
+  {
+   "num": "01",
+   "start": 11.2,
+   "end": 27.9,
+   "label": "BORROW",
+   "meaning": "take it for a while",
+   "color": "#4da3ff"
+  },
+  {
+   "num": "02",
+   "start": 33.1,
+   "end": 54.3,
+   "label": "LEND",
+   "meaning": "give it for a while",
+   "color": "#2ecc71"
+  },
+  {
+   "num": "03",
+   "start": 59.3,
+   "end": 65.6,
+   "label": "REMEMBER",
+   "meaning": "borrow = take \u00b7 lend = give",
+   "color": "#ffb52e"
+  }
+ ]
+}
